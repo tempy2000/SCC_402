@@ -45,25 +45,36 @@ map.on("load", () => {
     .setAccuracy(10)
     .show();
   */
+              
+    //BlueDot
+  const blueDot = new Mazemap.BlueDot({
+      map : map
+  })
+     .setLngLat({lng : longitude, lat : latitude})
+     .setZLevel(4)
+     .setAccuracy(10)
+     .show();
+   });
+  var locationController = new Mazemap.LocationController({
+    blueDot: blueDot,
+    map: map
+  });
+  locationController.setState('follow'); 
   const watchId = navigator.geolocation.watchPosition(position => {
       
-    console.log(position.coords);
     const { latitude, longitude } = position.coords;
-    console.log(longitude);
-    console.log(latitude);
     
-    map.flyTo({center:{lng : longitude, lat : latitude}, zoom: 18});
+    
+    locationController.updateLocationData({
+        lngLat: {
+            lng: longitude,
+            lat: latitude
+        }
+    }); 
+    
+    //map.flyTo({center:{lng : longitude, lat : latitude}, zoom: 18});
     // Show a map centered at latitude / longitude.
-          
-    //BlueDot
-    const blueDot = new Mazemap.BlueDot({
-      map : map
-    })
-      .setLngLat({lng : longitude, lat : latitude})
-      .setZLevel(4)
-      .setAccuracy(10)
-      .show();
-   });
+
   /*navigator.geolocation.getCurrentPosition(function(position){
     lng = position.coords.longitude;
     lat = position.coords.latitude;
