@@ -46,8 +46,9 @@ map.on("load", () => {
     .show();
   */
   const watchId = navigator.geolocation.watchPosition(position => {
+      
+    console.log(position.coords);
     const { latitude, longitude } = position.coords;
-    
     console.log(longitude);
     console.log(latitude);
     
