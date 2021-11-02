@@ -54,12 +54,7 @@ map.on("load", () => {
     
     map.flyTo({center:{lng : longitude, lat : latitude}, zoom: 18});
     // Show a map centered at latitude / longitude.
-   });
-  /*navigator.geolocation.getCurrentPosition(function(position){
-    lng = position.coords.longitude;
-    lat = position.coords.latitude;
-  */
-    
+          
     //BlueDot
     const blueDot = new Mazemap.BlueDot({
       map : map
@@ -68,6 +63,12 @@ map.on("load", () => {
       .setZLevel(4)
       .setAccuracy(10)
       .show();
+   });
+  /*navigator.geolocation.getCurrentPosition(function(position){
+    lng = position.coords.longitude;
+    lat = position.coords.latitude;
+  */
+
   
 })
 
