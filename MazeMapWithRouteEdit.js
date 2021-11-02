@@ -29,10 +29,10 @@ const p2 = { lngLat: { lng: -2.784581, lat: 54.005382 }, zLevel: map.zLevel };
 let route_controller;
 
 map.on("load", () => {
-    /*route_controller = new Mazemap.RouteController(map, {
+    route_controller = new Mazemap.RouteController(map, {
         routeLineColorPrimary: "#0099EA",
         routeLineColorSecondary: "#888888",
-    });*/
+    });
 
     // Set the route
     //set_route(p1, p2);
