@@ -50,8 +50,6 @@ map.on("load", () => {
   const blueDot = new Mazemap.BlueDot({
       map : map
   })
-     .setLngLat({lng : longitude, lat : latitude})
-     .setZLevel(4)
      .setAccuracy(10)
      .show();
    });
