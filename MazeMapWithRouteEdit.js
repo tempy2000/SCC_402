@@ -45,11 +45,14 @@ map.on("load", () => {
     .setAccuracy(10)
     .show();
   */
-  
-  navigator.geolocation.getCurrentPosition(function(position){
+  const watchId = navigator.geolocation.watchPosition(position => {
+    const { lng, lat } = position.coords;
+    // Show a map centered at latitude / longitude.
+    });
+  /*navigator.geolocation.getCurrentPosition(function(position){
     lng = position.coords.longitude;
     lat = position.coords.latitude;
-  
+  */
     console.log(lng);
     console.log(lat);
     
