@@ -67,7 +67,7 @@ map.on("load", () => {
       .setZLevel(4)
       .setAccuracy(10)
       .show();
-  })
+  
 })
 
 function set_route(p1, p2) {
