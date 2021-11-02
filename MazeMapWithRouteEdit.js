@@ -23,7 +23,6 @@ let lat;
 map.addControl(new Mazemap.mapboxgl.NavigationControl());
 
 // Placeholder start and end points using lat-long
-const p1 = { lngLat: { lng: -2.787412, lat: 54.003225 }, zLevel: map.zLevel };
 const p2 = { lngLat: { lng: -2.784581, lat: 54.005382 }, zLevel: map.zLevel };
 
 // Route controller will be set after the map has loaded
@@ -70,7 +69,7 @@ map.on("load", () => {
         }
     })
   });
-    
+  set_route({ lngLat: { lng: longitude, lat: latitude }, zLevel: map.zLevel }, p2);
     //map.flyTo({center:{lng : longitude, lat : latitude}, zoom: 18});
     // Show a map centered at latitude / longitude.
 
