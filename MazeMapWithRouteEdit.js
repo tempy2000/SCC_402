@@ -68,8 +68,10 @@ map.on("load", () => {
             lat: latitude
         }
     })
+      
+    
+    set_route({ lngLat: { lng: longitude, lat: latitude }, zLevel: map.zLevel }, p2);
   });
-  set_route({ lngLat: { lng: longitude, lat: latitude }, zLevel: map.zLevel }, p2);
     //map.flyTo({center:{lng : longitude, lat : latitude}, zoom: 18});
     // Show a map centered at latitude / longitude.
 
