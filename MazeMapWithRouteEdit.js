@@ -47,16 +47,17 @@ map.on("load", () => {
   */
   const watchId = navigator.geolocation.watchPosition(position => {
     const { lng, lat } = position.coords;
+      
+    console.log(lng);
+    console.log(lat);
+    
+    map.flyTo({center:{lng : lng, lat : lat}, zoom: 18});
     // Show a map centered at latitude / longitude.
     });
   /*navigator.geolocation.getCurrentPosition(function(position){
     lng = position.coords.longitude;
     lat = position.coords.latitude;
   */
-    console.log(lng);
-    console.log(lat);
-    
-    map.flyTo({center:{lng : lng, lat : lat}, zoom: 18});
     
     //BlueDot
     const blueDot = new Mazemap.BlueDot({
