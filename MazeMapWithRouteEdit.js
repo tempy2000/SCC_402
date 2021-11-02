@@ -79,7 +79,7 @@ map.on("load", () => {
   */
 
   
-})
+});
 
 function set_route(p1, p2) {
     // Remove previous route if present
@@ -96,7 +96,7 @@ function set_route(p1, p2) {
         let bounds = Mazemap.Util.Turf.bbox(geojson);
         map.fitBounds(bounds, { padding: 100 });
     });
-}
+};
 
 // Get and set the route
 
