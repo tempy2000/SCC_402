@@ -27,6 +27,7 @@ const p2 = { lngLat: { lng: -2.784581, lat: 54.005382 }, zLevel: map.zLevel };
 
 // Route controller will be set after the map has loaded
 let route_controller;
+let trigger = true;
 
 map.on("load", () => {
     route_controller = new Mazemap.RouteController(map, {
@@ -69,8 +70,10 @@ map.on("load", () => {
         }
     })
       
-    
-    set_route({ lngLat: { lng: longitude, lat: latitude }, zLevel: map.zLevel }, p2);
+    if(trigger) {
+        set_route({ lngLat: { lng: longitude, lat: latitude }, zLevel: map.zLevel }, p2);
+        trigger = false;
+    }
   });
     //map.flyTo({center:{lng : longitude, lat : latitude}, zoom: 18});
     // Show a map centered at latitude / longitude.
