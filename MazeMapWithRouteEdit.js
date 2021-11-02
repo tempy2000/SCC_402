@@ -68,7 +68,8 @@ map.on("load", () => {
             lng: longitude,
             lat: latitude
         }
-    }); 
+    })
+  });
     
     //map.flyTo({center:{lng : longitude, lat : latitude}, zoom: 18});
     // Show a map centered at latitude / longitude.
