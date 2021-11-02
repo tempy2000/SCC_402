@@ -27,7 +27,7 @@ const p2 = { lngLat: { lng: -2.784581, lat: 54.005382 }, zLevel: map.zLevel };
 
 // Route controller will be set after the map has loaded
 let route_controller;
-let trigger = true;
+var trigger = true;
 
 map.on("load", () => {
     route_controller = new Mazemap.RouteController(map, {
