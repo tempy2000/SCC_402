@@ -52,7 +52,7 @@ map.on("load", () => {
   })
      .setAccuracy(10)
      .show();
-   });
+    
   var locationController = new Mazemap.LocationController({
     blueDot: blueDot,
     map: map
