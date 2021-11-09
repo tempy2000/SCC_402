@@ -1,4 +1,12 @@
 // The map
+
+
+//<!-- include aframe -->
+//<!-- with location based, use aframe v0.9.2 -->
+//include("https://aframe.io/releases/0.9.2/aframe.min.js")
+//<!-- include ar.js -->
+//include("https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js")
+
 const map = new Mazemap.Map({
     container: "map",
     campuses: 341,
@@ -62,7 +70,10 @@ map.on("load", () => {
       
     const { latitude, longitude } = position.coords;
     
-    
+    var testElement = document.querySelector("body > ascene > a-text")
+
+    testElement.setAttribute("gps-entity-place", "latitude: " + latitude + "; longitude: " + longitude + ";")
+
     locationController.updateLocationData({
         lngLat: {
             lng: longitude,
