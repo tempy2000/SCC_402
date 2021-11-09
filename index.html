@@ -44,6 +44,22 @@
                 longitude: -2.7859756350517273
             });
         document.querySelector("body > a-scene").appendChild(entity);
+
+        const box = document.createElement('a-text');
+        box.setAttribute('color', 'red');
+        box.setAttribute('position', {x:0, y:2, z:-5});
+        box.setAttribute('scale', {
+            x: 2,
+            y: 2,
+            z: 2
+        });
+        box.setAttribute('gps-projected-entity-place', {
+                latitude: 54.00580783752977,
+                longitude: -2.7859756350517273
+            });
+        document.querySelector("body > a-scene").appendChild(box);
+
+
         const watchId = navigator.geolocation.watchPosition(position => {
           
             const { latitude, longitude } = position.coords;
