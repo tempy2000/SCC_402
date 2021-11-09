@@ -44,7 +44,7 @@
             console.log(testElement)
             console.log(latitude)
             console.log(longitude)
-            testElement.setAttribute("gps-entity-place", "latitude: " + latitude + "; longitude: " + longitude + ";")
+            testElement.setAttribute("gps-entity-place", {latitude: latitude, longitude: longitude})
             console.log(testElement)
         });
     </script>
