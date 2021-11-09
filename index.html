@@ -37,11 +37,12 @@
     <script>
         const watchId = navigator.geolocation.watchPosition(position => {
           
-          const { latitude, longitude } = position.coords;
-          
-          var testElement = document.querySelector("a-text")
-      
-          testElement.setAttribute("gps-entity-place", "latitude: " + latitude + "; longitude: " + longitude + ";")
+            const { latitude, longitude } = position.coords;
+        
+            var testElement = document.querySelector("a-text")
+            console.log(testElement)
+            testElement.setAttribute("gps-entity-place", "latitude: " + latitude + "; longitude: " + longitude + ";")
+            console.log(testElement)
         });
     </script>
 </body>
