@@ -36,16 +36,23 @@
     </a-scene>
 
     <script>
+        const entity = document.createElement('a-text');
+        entity.setAttribute('look-at', '[gps-projected-camera]');
+        entity.setAttribute('value', "Test Item");
+        entity.setAttribute('scale', {
+            x: 120,
+            y: 120,
+            z: 120
+        });
+        this.el.appendChild(entity);
         const watchId = navigator.geolocation.watchPosition(position => {
           
             const { latitude, longitude } = position.coords;
         
-            var testElement = document.querySelector("a-text")
-            console.log(testElement)
-            console.log(latitude)
-            console.log(longitude)
-            testElement.setAttribute("gps-entity-place", {latitude: latitude, longitude: longitude})
-            console.log(testElement)
+            entity.setAttribute('gps-projected-entity-place', {
+                latitude: latitude,
+                longitude: longitude
+            });
         });
     </script>
 </body>
