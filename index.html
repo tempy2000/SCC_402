@@ -25,12 +25,7 @@
         embedded
         arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-        <a-text
-        value="This content will always face you."
-        look-at="[gps-camera]"
-        scale="120 120 120"
-        gps-entity-place="latitude: 54.01; longitude: -2.7879;" 
-        ></a-text><!-- latitude: <add-your-latitude>; longitude: <add-your-longitude>; -->
+        <!-- latitude: <add-your-latitude>; longitude: <add-your-longitude>; -->
         <!--"latitude: 54.005421; longitude: -2.785180;"-->
         <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
@@ -44,15 +39,16 @@
             y: 120,
             z: 120
         });
-        this.el.appendChild(entity);
+        entity.setAttribute('gps-projected-entity-place', {
+                latitude: 54.00580783752977,
+                longitude: -2.7859756350517273
+            });
+        document.querySelector("body > a-scene").appendChild(entity);
         const watchId = navigator.geolocation.watchPosition(position => {
           
             const { latitude, longitude } = position.coords;
         
-            entity.setAttribute('gps-projected-entity-place', {
-                latitude: latitude,
-                longitude: longitude
-            });
+            // 54.00580783752977, -2.7859756350517273
         });
     </script>
 </body>
