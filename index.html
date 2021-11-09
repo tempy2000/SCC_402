@@ -31,7 +31,7 @@
     </a-scene>
 
     <script>
-        const entity = document.createElement('a-box');
+        const entity = document.createElement('a-text');
         entity.setAttribute('look-at', '[gps-projected-camera]');
         entity.setAttribute('value', "Test Item");
         entity.setAttribute('scale', {
@@ -45,7 +45,7 @@
             });
         document.querySelector("body > a-scene").appendChild(entity);
 
-        const box = document.createElement('a-text');
+        const box = document.createElement('a-box');
         box.setAttribute('color', 'red');
         box.setAttribute('position', {x:0, y:2, z:-5});
         box.setAttribute('scale', {
