@@ -29,7 +29,7 @@
         value="This content will always face you."
         look-at="[gps-camera]"
         scale="120 120 120"
-        gps-entity-place="latitude: 0; longitude: 0;" 
+        gps-entity-place="latitude: 54.005421; longitude: -2.785180;" 
         ></a-text><!-- latitude: <add-your-latitude>; longitude: <add-your-longitude>; -->
         <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
@@ -41,8 +41,10 @@
         
             var testElement = document.querySelector("a-text")
             console.log(testElement)
-            testElement.setAttribute("gps-entity-place", "latitude: " + latitude + "; longitude: " + longitude + ";")
-            console.log(testElement)
+            console.log(latitude)
+            console.log(longitude)
+            //testElement.setAttribute("gps-entity-place", "latitude: " + latitude + "; longitude: " + longitude + ";")
+            //console.log(testElement)
         });
     </script>
 </body>
