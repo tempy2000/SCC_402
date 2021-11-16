@@ -13,10 +13,11 @@ AFRAME.registerComponent('peakfinder', {
        fetch(`buildings-data.json`
            )
        .then ( response => response.json() )
-       .then ( json => {
-           json.features.filter ( f => f.type == 'Feature' )
+       .then(json => console.log(jsondata));
+       /*.then ( json => {
+           json.features.filter ( f => f[0][0].type == 'Feature' )
                .forEach ( Feature => {
-                  console.log("Looping");
+                   console.log("Looping");
                    const entity = document.createElement('a-text');
                    entity.setAttribute('look-at', '[gps-projected-camera]');
                    entity.setAttribute('value', 'test');
@@ -31,7 +32,7 @@ AFRAME.registerComponent('peakfinder', {
                    });
                    this.el.appendChild(entity);
                });
-       });
+       });*/
    }
     /*_loadPeaks: function(longitude, latitude) {
        const scale = 2000;
