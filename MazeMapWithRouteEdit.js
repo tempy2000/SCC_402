@@ -1,4 +1,6 @@
-const jsonData= require('./buildings-data.json'); console.log(jsonData);
+$.getJSON("building-data.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
+});
 
 AFRAME.registerComponent('peakfinder', {
     init: function() {
