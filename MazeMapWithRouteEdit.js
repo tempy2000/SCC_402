@@ -25,7 +25,7 @@ AFRAME.registerComponent('peakfinder', {
        })
        .then ( json => {
          alert("Loop Starts");
-           json.features.filter ( f => f.type == 'Feature' )
+           //json.features.filter ( f => f.type == 'Feature' )
                .forEach ( Feature => {
                    alert("Looping");
                    const entity = document.createElement('a-text');
