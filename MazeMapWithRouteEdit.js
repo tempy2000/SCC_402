@@ -10,6 +10,30 @@ AFRAME.registerComponent('peakfinder', {
     },
     _loadPeaks: function(longitude, latitude) {
        const scale = 2000;
+       fetch(`buildings-data.json`
+           )
+       .then ( response => response.json() )
+       .then ( json => {
+           json.features.filter ( f => f.type == 'Feature' )
+               .forEach ( peak => {
+                   const entity = document.createElement('a-text');
+                   entity.setAttribute('look-at', '[gps-projected-camera]');
+                   entity.setAttribute('value', 'test');
+                   entity.setAttribute('scale', {
+                       x: scale,
+                       y: scale,
+                       z: scale
+                   });
+                   entity.setAttribute('gps-projected-entity-place', {
+                       latitude: peak.geometry.coordinates[0][1],
+                       longitude: peak.geometry.coordinates[0][0]
+                   });
+                   this.el.appendChild(entity);
+               });
+       });
+   }
+    /*_loadPeaks: function(longitude, latitude) {
+       const scale = 2000;
        fetch(`https://www.hikar.org/fm/ws/bsvr.php?bbox=${longitude-0.1},${latitude-0.1},${longitude+0.1},${latitude+0.1}&outProj=4326&format=json&poi=natural`
            )
        .then ( response => response.json() )
@@ -31,7 +55,7 @@ AFRAME.registerComponent('peakfinder', {
                    this.el.appendChild(entity);
                });
        });
-   }
+   }*/
 });
 
 // The map
