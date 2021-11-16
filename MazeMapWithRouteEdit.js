@@ -15,7 +15,9 @@ AFRAME.registerComponent('peakfinder', {
        .then ( response => response.json() )
        .then ( json => {
            json.features.filter ( f => f.type == 'Feature' )
+              console.log("Filtered");
                .forEach ( peak => {
+                  console.log("Looping");
                    const entity = document.createElement('a-text');
                    entity.setAttribute('look-at', '[gps-projected-camera]');
                    entity.setAttribute('value', 'test');
