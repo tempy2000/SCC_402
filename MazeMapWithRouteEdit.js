@@ -16,12 +16,12 @@ AFRAME.registerComponent('peakfinder', {
     },
     _loadPeaks: function(longitude, latitude) {
        const scale = 2000;
-       fetch(jsonData)
-       .then ( response => {alert(JSON.stringify(response))})
-       .catch(err =>alert(err));
-       // .then(json => console.log(json));
-       /*.then ( json => {
-           json.features.filter ( f => f[0][0].type == 'Feature' )
+       fetch("../buildings-data.json")
+       .then(response => {
+          return response.json();
+       })
+       .then ( json => {
+           json.features.filter ( f => f.type == 'Feature' )
                .forEach ( Feature => {
                    console.log("Looping");
                    const entity = document.createElement('a-text');
@@ -38,7 +38,7 @@ AFRAME.registerComponent('peakfinder', {
                    });
                    this.el.appendChild(entity);
                });
-       });*/
+       });
    }
     /*_loadPeaks: function(longitude, latitude) {
        const scale = 2000;
