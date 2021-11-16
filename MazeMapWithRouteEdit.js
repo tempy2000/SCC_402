@@ -26,8 +26,8 @@ AFRAME.registerComponent('peakfinder', {
        .then ( json => {
         for (const key in json){
             if(json.hasOwnProperty(key)){
-              console.log(`${key} : ${json[key].features.geometry.coordinates[0][0]}`)
-              console.log(`${key} : ${json[key].features.geometry.coordinates[0][1]}`)
+              console.log(`${key} : ${json[key].features[0].geometry.coordinates[0][0]}`)
+              console.log(`${key} : ${json[key].features[0].geometry.coordinates[0][1]}`)
               const entity = document.createElement('a-cone');
               //entity.setAttribute('look-at', '[gps-projected-camera]');
               //entity.setAttribute('value', json[key].properties.name);
@@ -37,8 +37,8 @@ AFRAME.registerComponent('peakfinder', {
                   z: scale
               });
               entity.setAttribute('gps-projected-entity-place', {
-                  latitude: json[key].features.geometry.coordinates[0][0],
-                  longitude: json[key].features.geometry.coordinates[0][1]
+                  latitude: json[key].features[0].geometry.coordinates[0][0],
+                  longitude: json[key].features[0].geometry.coordinates[0][1]
               });
               this.el.appendChild(entity);
             }
