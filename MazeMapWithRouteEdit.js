@@ -30,7 +30,7 @@ AFRAME.registerComponent('peakfinder', {
               console.log(`${key} : ${json[key].geometry.coordinates[0][1]}`)
               const entity = document.createElement('a-text');
               entity.setAttribute('look-at', '[gps-projected-camera]');
-              entity.setAttribute('value', 'test');
+              entity.setAttribute('value', json[key].properties.name);
               entity.setAttribute('scale', {
                   x: scale,
                   y: scale,
