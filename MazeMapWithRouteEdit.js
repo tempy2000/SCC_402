@@ -15,12 +15,14 @@ AFRAME.registerComponent('peakfinder', {
         });
     },
     _loadPeaks: function(longitude, latitude) {
+        alert("Load Peaks");
        const scale = 2000;
        fetch("../buildings-data.json")
        .then(response => {
           return response.json();
        })
        .then ( json => {
+         alert("Looping");
            json.features.filter ( f => f.type == 'Feature' )
                .forEach ( Feature => {
                    console.log("Looping");
