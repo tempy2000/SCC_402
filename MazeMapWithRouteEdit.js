@@ -1,4 +1,4 @@
-fetch("./building-data.json")
+fetch("../buildings-data.json")
 .then(response => {
    return response.json();
 })
