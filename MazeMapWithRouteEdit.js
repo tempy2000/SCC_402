@@ -19,26 +19,26 @@ AFRAME.registerComponent('peakfinder', {
     _loadPeaks: function(longitude, latitude) {
         //alert("Load Peaks");
        const scale = 20;
-       fetch("../buildings-data.json")
+       fetch("../routeData.json")
        .then(response => {
           return response.json();
        })
        .then ( json => {
         for (const key in json){
             if(json.hasOwnProperty(key)){
-              console.log(`${key} : ${json[key].geometry.coordinates[0][0]}`)
-              console.log(`${key} : ${json[key].geometry.coordinates[0][1]}`)
-              const entity = document.createElement('a-text');
-              entity.setAttribute('look-at', '[gps-projected-camera]');
-              entity.setAttribute('value', json[key].properties.name);
+              console.log(`${key} : ${json[key].features.geometry.coordinates[0][0]}`)
+              console.log(`${key} : ${json[key].features.geometry.coordinates[0][1]}`)
+              const entity = document.createElement('a-cone');
+              //entity.setAttribute('look-at', '[gps-projected-camera]');
+              //entity.setAttribute('value', json[key].properties.name);
               entity.setAttribute('scale', {
                   x: scale,
                   y: scale,
                   z: scale
               });
               entity.setAttribute('gps-projected-entity-place', {
-                  latitude: json[key].geometry.coordinates[0][0][1],
-                  longitude: json[key].geometry.coordinates[0][0][0]
+                  latitude: json[key].features.geometry.coordinates[0][0][1],
+                  longitude: json[key].features.geometry.coordinates[0][0][0]
               });
               this.el.appendChild(entity);
             }
