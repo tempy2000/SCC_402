@@ -25,7 +25,7 @@ AFRAME.registerComponent('peakfinder', {
        })
        .then ( json => {
          console.log(json.features[0].geometry.coordinates[0]);
-       });
+       
          /*
         for (const key in json){
             if(json.hasOwnProperty(key)){
