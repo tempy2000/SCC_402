@@ -7,8 +7,10 @@ fetch("../buildings-data.json")
 AFRAME.registerComponent('peakfinder', {
     init: function() {
         this.loaded = false;
+        alert(this.loaded);
         window.addEventListener('gps-camera-update-position', e => {
             if(this.loaded === false) {
+                alert("Running");
                 this._loadPeaks(e.detail.position.longitude, e.detail.position.latitude);
                 this.loaded = true;
             }
