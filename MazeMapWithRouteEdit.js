@@ -10,8 +10,7 @@ AFRAME.registerComponent('peakfinder', {
     },
     _loadPeaks: function(longitude, latitude) {
        const scale = 2000;
-       fetch(`buildings-data.json`
-           )
+       fetch("./buildings-data.json")
        .then ( response => {return response.json()} )
        .then(json => console.log(json));
        /*.then ( json => {
