@@ -12,7 +12,7 @@ AFRAME.registerComponent('peakfinder', {
        const scale = 2000;
        fetch(`buildings-data.json`
            )
-       .then ( response => response.json() )
+       .then ( response => return response.json() )
        .then(json => console.log(jsondata));
        /*.then ( json => {
            json.features.filter ( f => f[0][0].type == 'Feature' )
