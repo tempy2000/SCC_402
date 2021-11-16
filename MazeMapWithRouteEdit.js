@@ -7,7 +7,7 @@ AFRAME.registerComponent('peakfinder', {
                 this.loaded = true;
             }
         });
-    }
+    },
     _loadPeaks: function(longitude, latitude) {
        const scale = 2000;
        fetch(`https://www.hikar.org/fm/ws/bsvr.php?bbox=${longitude-0.1},${latitude-0.1},${longitude+0.1},${latitude+0.1}&outProj=4326&format=json&poi=natural`
