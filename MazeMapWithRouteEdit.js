@@ -18,7 +18,7 @@ AFRAME.registerComponent('peakfinder', {
     },
     _loadPeaks: function(longitude, latitude) {
         //alert("Load Peaks");
-       const scale = 2000;
+       const scale = 1;
        fetch("../buildings-data.json")
        .then(response => {
           return response.json();
