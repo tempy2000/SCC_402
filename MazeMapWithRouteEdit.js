@@ -24,6 +24,9 @@ AFRAME.registerComponent('peakfinder', {
           return response.json();
        })
        .then ( json => {
+         console.log(json.features[0].geometry.coordinates[0]);
+       });
+         /*
         for (const key in json){
             if(json.hasOwnProperty(key)){
               console.log(`${key} : ${json[key].features[0].geometry.coordinates[0][0]}`)
@@ -42,7 +45,7 @@ AFRAME.registerComponent('peakfinder', {
               });
               this.el.appendChild(entity);
             }
-          }
+          }*/
            /*json.features.filter ( f => f.type == 'Feature' )
                .forEach ( Feature => {
                    alert("Looping");
