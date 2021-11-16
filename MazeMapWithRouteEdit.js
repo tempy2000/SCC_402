@@ -37,8 +37,8 @@ AFRAME.registerComponent('peakfinder', {
                   z: scale
               });
               entity.setAttribute('gps-projected-entity-place', {
-                  latitude: json[key].features.geometry.coordinates[0][0][1],
-                  longitude: json[key].features.geometry.coordinates[0][0][0]
+                  latitude: json[key].features.geometry.coordinates[0][0],
+                  longitude: json[key].features.geometry.coordinates[0][1]
               });
               this.el.appendChild(entity);
             }
