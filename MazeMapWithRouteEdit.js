@@ -7,27 +7,27 @@ fetch("../buildings-data.json")
 AFRAME.registerComponent('peakfinder', {
     init: function() {
         this.loaded = false;
-        alert(this.loaded);
+        //alert(this.loaded);
         window.addEventListener('gps-camera-update-position', e => {
             if(this.loaded === false) {
-                alert("Running");
+                //alert("Running");
                 this._loadPeaks(e.detail.position.longitude, e.detail.position.latitude);
                 this.loaded = true;
             }
         });
     },
     _loadPeaks: function(longitude, latitude) {
-        alert("Load Peaks");
+        //alert("Load Peaks");
        const scale = 2000;
        fetch("../buildings-data.json")
        .then(response => {
           return response.json();
        })
        .then ( json => {
-         alert("Looping");
+         alert("Loop Starts");
            json.features.filter ( f => f.type == 'Feature' )
                .forEach ( Feature => {
-                   console.log("Looping");
+                   alert("Looping");
                    const entity = document.createElement('a-text');
                    entity.setAttribute('look-at', '[gps-projected-camera]');
                    entity.setAttribute('value', 'test');
@@ -37,8 +37,8 @@ AFRAME.registerComponent('peakfinder', {
                        z: scale
                    });
                    entity.setAttribute('gps-projected-entity-place', {
-                       latitude: peak.geometry.coordinates[0][1],
-                       longitude: peak.geometry.coordinates[0][0]
+                       latitude: Feature.geometry.coordinates[0][1],
+                       longitude: Feature.geometry.coordinates[0][0]
                    });
                    this.el.appendChild(entity);
                });
