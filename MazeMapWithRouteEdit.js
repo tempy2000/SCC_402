@@ -15,7 +15,7 @@ AFRAME.registerComponent('peakfinder', {
         });
     },
     _loadPeaks: function(longitude, latitude) {
-		const scale = 20;
+		const scale = 20000;
        	fetch("../routeData.json")
        	.then(response => {
 			return response.json();
