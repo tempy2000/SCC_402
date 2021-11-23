@@ -27,9 +27,10 @@ AFRAME.registerComponent('peakfinder', {
          let cone = null;
           
          json.features.forEach(feature => {
-           const entity = document.createElement('a-cone');
-           if (feature.geometry.type === "Point") {
-             console.log("Point")
+            const entity = document.createElement('a-cone');
+          
+            if (feature.geometry.type === "Point") {
+               console.log("Point")
              //console.log(feature.geometry.coordinates[0]);
              //entity.setAttribute('look-at', '[gps-projected-camera]');
              //entity.setAttribute('value', json[key].properties.name);
@@ -61,17 +62,22 @@ AFRAME.registerComponent('peakfinder', {
                entity = document.createElement('a-cone');
              })
            }
-           if(cone != null) {
+           if (cone != null) {
+              alert("cone was not null");
+              
              let conePosition = cone.getAttribute('gps-projected-entity-place');
              let entityPosition = entity.getAttribute('gps-projected-entity-place');
              let lngDelta = conePosition.longitude - entityPosition.longitude;
              let latDelta = conePosition.latitude - entityPosition.latitude;
              let angle = calculateAngle(lngDelta, latDelta);
+              
              cone.setAttribute('rotation', {
                 x: 90,
                 y: angle,
                 z: 0
              });
+           } else {
+              alert("cone was null");
            }
            cone = entity;
            this.el.appendChild(entity);
