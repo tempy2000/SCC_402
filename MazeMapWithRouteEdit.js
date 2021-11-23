@@ -38,9 +38,10 @@ AFRAME.registerComponent('peakfinder', {
                  z: scale
              });
              entity.setAttribute('gps-projected-entity-place', {
-                 latitude: feature.geometry.coordinates[0][0],
-                 longitude: feature.geometry.coordinates[0][1]
+                 latitude: feature.geometry.coordinates[0],
+                 longitude: feature.geometry.coordinates[1]
              });
+             
            }
            else {
              console.log("Not Point")
@@ -53,8 +54,8 @@ AFRAME.registerComponent('peakfinder', {
                  z: scale
              });
              entity.setAttribute('gps-projected-entity-place', {
-                 latitude: feature.geometry.coordinates[0][0][0],
-                 longitude: feature.geometry.coordinates[0][0][1]
+                 latitude: feature.geometry.coordinates[0][0],
+                 longitude: feature.geometry.coordinates[0][1]
              });
            }
            if(cone != null) {
