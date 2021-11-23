@@ -4,10 +4,6 @@ fetch("../routeData.json")
 })
 .then(jsondata => console.log(jsondata));
 
-function calculateAngle(x, y) {
-    return Math.atan2(y, x) * 180 / Math.PI;
-}
-
 AFRAME.registerComponent('peakfinder', {
     init: function() {
         this.loaded = false;
@@ -22,61 +18,50 @@ AFRAME.registerComponent('peakfinder', {
     },
     _loadPeaks: function(longitude, latitude) {
         //alert("Load Peaks");
-       const scale = 20;
+       const scale = 200;
        fetch("../routeData.json")
        .then(response => {
           return response.json();
        })
        .then ( json => {
-            const cone = null;
-            json.features.forEach(feature => {
-                if (feature.geometry.type === "Point") {
-                    console.log(feature.geometry.coordinates[0]);
-                    const entity = document.createElement('a-cone');
-                    //entity.setAttribute('look-at', '[gps-projected-camera]');
-                    //entity.setAttribute('value', json[key].properties.name);
-                    entity.setAttribute('scale', {
-                        x: scale,
-                        y: scale,
-                        z: scale
-                    });
-                    entity.setAttribute('gps-projected-entity-place', {
-                        latitude: feature.geometry.coordinates[0][0],
-                        longitude: feature.geometry.coordinates[0][1]
-                    });
-                }
-                else {
-                    console.log(feature.geometry.coordinates[0]);
-                    const entity = document.createElement('a-cone');
-                    //entity.setAttribute('look-at', '[gps-projected-camera]');
-                    //entity.setAttribute('value', json[key].properties.name);
-                    entity.setAttribute('scale', {
-                        x: scale,
-                        y: scale,
-                        z: scale
-                    });
-                    entity.setAttribute('gps-projected-entity-place', {
-                        latitude: feature.geometry.coordinates[0][0][0],
-                        longitude: feature.geometry.coordinates[0][0][1]
-                    });
-                }
+         json.features.forEach(feature => {
 
-                if (cone != null) {
-                    const conePosition = cone.getAttribute('position');
-                    const entityPosition = entity.getAttribute('position');
-                    const xDelta = conePosition.x - entityPosition.x;
-                    const yDelta = conePosition.x - entityPosition.y;
-                    const angle = calculateAngle(xDelta, yDelta);
-                    cone.setAttribute('rotation', {
-                        x: 0,
-                        y: 0,
-                        z: angle
-                    });
-                }
-                this.el.appendChild(entity);
-                console.log(feature.geometry.coordinates[0]);
+           const entity = document.createElement('a-cone');
+           if (feature.geometry.type === "Point") {
+             alert("Point")
+             console.log(feature.geometry.coordinates[0]);
+             //entity.setAttribute('look-at', '[gps-projected-camera]');
+             //entity.setAttribute('value', json[key].properties.name);
+             entity.setAttribute('scale', {
+                 x: scale,
+                 y: scale,
+                 z: scale
+             });
+             entity.setAttribute('gps-projected-entity-place', {
+                 latitude: feature.geometry.coordinates[0][0],
+                 longitude: feature.geometry.coordinates[0][1]
+             });
+           }
+           else {
+             alert("Not Point")
+             console.log(feature.geometry.coordinates[0]);
+             //entity.setAttribute('look-at', '[gps-projected-camera]');
+             //entity.setAttribute('value', json[key].properties.name);
+             entity.setAttribute('scale', {
+                 x: scale,
+                 y: scale,
+                 z: scale
+             });
+             entity.setAttribute('gps-projected-entity-place', {
+                 latitude: feature.geometry.coordinates[0][0][0],
+                 longitude: feature.geometry.coordinates[0][0][1]
+             });
+           }
+           this.el.appendChild(entity);
+           alert("Apparently Done")
+           console.log(feature.geometry.coordinates[0]);
 
-                })
+         })
          /*
         for (const key in json){
             if(json.hasOwnProperty(key)){
