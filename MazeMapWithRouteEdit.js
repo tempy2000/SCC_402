@@ -92,9 +92,9 @@ AFRAME.registerComponent('peakfinder', {
      let angle = Math.atan2(latDelta, lngDelta) * 180 / Math.PI;
 
      cone.object3D.rotation.set(
-        THREE.Math.degToRad(angle),
         THREE.Math.degToRad(0),
-        THREE.Math.degToRad(0)
+        THREE.Math.degToRad(0),
+        THREE.Math.degToRad(angle)
       );
    }
     /*_loadPeaks: function(longitude, latitude) {
