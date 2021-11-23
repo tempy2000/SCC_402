@@ -25,7 +25,7 @@ AFRAME.registerComponent('peakfinder', {
        })
        .then ( json => {
           let previousEntity = null;
-
+          let child = null;
          json.features.forEach(feature => {
            let entity = document.createElement('a-cone');
            if (feature.geometry.type === "Point") {
@@ -55,14 +55,16 @@ AFRAME.registerComponent('peakfinder', {
                    longitude: feature.geometry.coordinates[x][0]
                });
 
-               this.el.appendChild(_editRotation(entity, previousEntity));
+               child = _editRotation(entity, previousEntity)
+               this.el.appendChild(child);
                previousEntity = entity
                x = x + 1
                entity = document.createElement('a-cone');
              })
            }
            //cone = entity;
-           this.el.appendChild(_editRotation(entity, previousEntity));
+           child = _editRotation(entity, previousEntity)
+           this.el.appendChild(child);
            previousEntity = entity
          })
        });
