@@ -25,10 +25,11 @@ AFRAME.registerComponent('peakfinder', {
        })
        .then ( json => {
          json.features.forEach(feature => {
+
+           const entity = document.createElement('a-cone');
            if (feature.geometry.type === "Point") {
              alert("Point")
              console.log(feature.geometry.coordinates[0]);
-             const entity = document.createElement('a-cone');
              //entity.setAttribute('look-at', '[gps-projected-camera]');
              //entity.setAttribute('value', json[key].properties.name);
              entity.setAttribute('scale', {
@@ -44,7 +45,6 @@ AFRAME.registerComponent('peakfinder', {
            else {
              alert("Not Point")
              console.log(feature.geometry.coordinates[0]);
-             const entity = document.createElement('a-cone');
              //entity.setAttribute('look-at', '[gps-projected-camera]');
              //entity.setAttribute('value', json[key].properties.name);
              entity.setAttribute('scale', {
