@@ -40,9 +40,9 @@ AFRAME.registerComponent('peakfinder', {
                  z: scale
              });
              entity.object3D.rotation.set(
-                THREE.Math.degToRad(90),
-                THREE.Math.degToRad(270),
-                THREE.Math.degToRad(0)
+                THREE.Math.degToRad(20),
+                THREE.Math.degToRad(180),
+                THREE.Math.degToRad(45)
               );
              entity.setAttribute('gps-projected-entity-place', {
                  latitude: feature.geometry.coordinates[1],
@@ -58,6 +58,11 @@ AFRAME.registerComponent('peakfinder', {
                    y: scale,
                    z: scale
                });
+               entity.object3D.rotation.set(
+                  THREE.Math.degToRad(20),
+                  THREE.Math.degToRad(180),
+                  THREE.Math.degToRad(45)
+                );
                entity.setAttribute('gps-projected-entity-place', {
                    latitude: feature.geometry.coordinates[x][1],
                    longitude: feature.geometry.coordinates[x][0]
