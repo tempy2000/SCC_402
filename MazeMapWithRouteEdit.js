@@ -24,8 +24,9 @@ AFRAME.registerComponent('peakfinder', {
           return response.json();
        })
        .then ( json => {
+         let cone = null;
+          
          json.features.forEach(feature => {
-           let cone = null;
            const entity = document.createElement('a-cone');
            if (feature.geometry.type === "Point") {
              console.log("Point")
