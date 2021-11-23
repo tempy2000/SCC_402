@@ -59,7 +59,9 @@ AFRAME.registerComponent('peakfinder', {
                this.el.appendChild(child);
                previousEntity = entity
                x = x + 1
-               entity = document.createElement('a-cone');
+               if(feature.geometry.coordinates[x+1]) {
+                entity = document.createElement('a-cone');
+              }
              })
            }
            //cone = entity;
