@@ -77,7 +77,7 @@ AFRAME.registerComponent('peakfinder', {
          })
        });
    },
-   _editRotation: function(cone, entity) {
+   _editRotation: function(entity) {
      let cone = document.getElementsByClassName('a-cone').slice(-1)
 
      let conePosition = cone.getAttribute('gps-projected-entity-place');
