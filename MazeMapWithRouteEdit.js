@@ -26,10 +26,10 @@ AFRAME.registerComponent('peakfinder', {
        .then ( json => {
          json.features.forEach(feature => {
            let cone = null;
-           let entity = document.createElement('a-cone');
+           const entity = document.createElement('a-cone');
            if (feature.geometry.type === "Point") {
              console.log("Point")
-             console.log(feature.geometry.coordinates[0]);
+             //console.log(feature.geometry.coordinates[0]);
              //entity.setAttribute('look-at', '[gps-projected-camera]');
              //entity.setAttribute('value', json[key].properties.name);
              entity.setAttribute('scale', {
@@ -38,14 +38,14 @@ AFRAME.registerComponent('peakfinder', {
                  z: scale
              });
              entity.setAttribute('gps-projected-entity-place', {
-                 latitude: feature.geometry.coordinates[0],
-                 longitude: feature.geometry.coordinates[1]
+                 latitude: feature.geometry.coordinates[1],
+                 longitude: feature.geometry.coordinates[0]
              });
-             
+
            }
            else {
              console.log("Not Point")
-             console.log(feature.geometry.coordinates[0]);
+             //console.log(feature.geometry.coordinates[0]);
              //entity.setAttribute('look-at', '[gps-projected-camera]');
              //entity.setAttribute('value', json[key].properties.name);
              entity.setAttribute('scale', {
@@ -54,8 +54,8 @@ AFRAME.registerComponent('peakfinder', {
                  z: scale
              });
              entity.setAttribute('gps-projected-entity-place', {
-                 latitude: feature.geometry.coordinates[0][0],
-                 longitude: feature.geometry.coordinates[0][1]
+                 latitude: feature.geometry.coordinates[0][1],
+                 longitude: feature.geometry.coordinates[0][0]
              });
            }
            if(cone != null) {
