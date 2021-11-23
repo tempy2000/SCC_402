@@ -25,8 +25,8 @@ AFRAME.registerComponent('peakfinder', {
        })
        .then ( json => {
          json.features.forEach(feature => {
-
-           const entity = document.createElement('a-cone');
+           let cone = null;
+           let entity = document.createElement('a-cone');
            if (feature.geometry.type === "Point") {
              console.log("Point")
              console.log(feature.geometry.coordinates[0]);
@@ -57,6 +57,19 @@ AFRAME.registerComponent('peakfinder', {
                  longitude: feature.geometry.coordinates[0][0][1]
              });
            }
+           if(cone != null) {
+             let conePosition = cone.getAttribute('position');
+             let entityPosition = entity.getAttribute('position');
+             let xDelta = conePosition.x - entityPosition.x;
+             let yDelta = conePosition.x - entityPosition.y;
+             let angle = calculateAngle(xDelta, yDelta);
+             cone.setAttribute('rotation', {
+                x: 0,
+                y: 0,
+                z: angle
+             });
+           }
+           cone = entity;
            this.el.appendChild(entity);
            //alert("Apparently Done")
            console.log(feature.geometry.coordinates[0]);
