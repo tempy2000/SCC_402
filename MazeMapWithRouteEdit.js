@@ -24,26 +24,28 @@ AFRAME.registerComponent('peakfinder', {
           return response.json();
        })
        .then ( json => {
+          let cone = null;
+          
          json.features.forEach(feature => {
-           let cone = null;
            let entity = document.createElement('a-cone');
            if (feature.geometry.type === "Point") {
              console.log("Point")
              //console.log(feature.geometry.coordinates[0]);
              //entity.setAttribute('look-at', '[gps-projected-camera]');
              //entity.setAttribute('value', json[key].properties.name);
-             entity.setAttribute('scale', {
+             
+              entity.setAttribute('scale', {
                  x: scale,
                  y: scale,
                  z: scale
              });
+              
              entity.setAttribute('gps-projected-entity-place', {
                  latitude: feature.geometry.coordinates[1],
                  longitude: feature.geometry.coordinates[0]
              });
 
-           }
-           else {
+           } else {
              console.log("Not Point")
              feature.geometry.coordinates.forEach(coordinates => {
                entity.setAttribute('scale', {
@@ -61,6 +63,7 @@ AFRAME.registerComponent('peakfinder', {
              })
            }
            if(cone != null) {
+             alert("cone was not null :)");
              let conePosition = cone.getAttribute('gps-projected-entity-place');
              let entityPosition = entity.getAttribute('gps-projected-entity-place');
              let lngDelta = conePosition.longitude - entityPosition.longitude;
@@ -71,6 +74,8 @@ AFRAME.registerComponent('peakfinder', {
                 y: angle,
                 z: 0
              });
+           } else {
+              alert("cone was null :(");
            }
            cone = entity;
            this.el.appendChild(entity);
