@@ -39,7 +39,11 @@ AFRAME.registerComponent('peakfinder', {
                  y: scale,
                  z: scale
              });
-
+             entity.setAttribute('rotation', {
+                x: 90,
+                y: 270,
+                z: 0
+             });
              entity.setAttribute('gps-projected-entity-place', {
                  latitude: feature.geometry.coordinates[1],
                  longitude: feature.geometry.coordinates[0]
@@ -66,14 +70,14 @@ AFRAME.registerComponent('peakfinder', {
            }
            //cone = entity;
            this.el.appendChild(entity);
-           _editRotation(entity);
+           //_editRotation(entity);
            //alert("Apparently Done")
            //console.log(feature.geometry.coordinates[0]);
 
          })
        });
    },
-   _editRotation: function(entity) {
+   _editRotation: function(cone, entity) {
      let cone = document.getElementsByClassName('a-cone').slice(-1)
 
      let conePosition = cone.getAttribute('gps-projected-entity-place');
