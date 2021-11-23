@@ -47,7 +47,7 @@ AFRAME.registerComponent('peakfinder', {
                     });
                 }
                 else {
-                    alert("Not POint")
+                    alert("Not Point")
                     console.log(feature.geometry.coordinates[0]);
                     const entity = document.createElement('a-cone');
                     //entity.setAttribute('look-at', '[gps-projected-camera]');
