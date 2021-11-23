@@ -41,6 +41,9 @@ AFRAME.registerComponent('peakfinder', {
                  longitude: feature.geometry.coordinates[0]
              });
 
+             child = this._editRotation(entity, previousEntity)
+             this.el.appendChild(child);
+             previousEntity = entity
            } else {
              console.log("Not Point")
              let x = 0
@@ -59,15 +62,10 @@ AFRAME.registerComponent('peakfinder', {
                this.el.appendChild(child);
                previousEntity = entity
                x = x + 1
-               if(feature.geometry.coordinates[x+1]) {
-                entity = document.createElement('a-cone');
-              }
+              entity = document.createElement('a-cone');
              })
            }
            //cone = entity;
-           child = this._editRotation(entity, previousEntity)
-           this.el.appendChild(child);
-           previousEntity = entity
          })
        });
    },
