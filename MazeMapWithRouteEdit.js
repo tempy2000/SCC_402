@@ -45,18 +45,20 @@ AFRAME.registerComponent('peakfinder', {
            }
            else {
              console.log("Not Point")
-             //console.log(feature.geometry.coordinates[0]);
-             //entity.setAttribute('look-at', '[gps-projected-camera]');
-             //entity.setAttribute('value', json[key].properties.name);
-             entity.setAttribute('scale', {
-                 x: scale,
-                 y: scale,
-                 z: scale
-             });
-             entity.setAttribute('gps-projected-entity-place', {
-                 latitude: feature.geometry.coordinates[0][1],
-                 longitude: feature.geometry.coordinates[0][0]
-             });
+             feature.geometry.coordinates.forEach(coordinates => {
+               entity.setAttribute('scale', {
+                   x: scale,
+                   y: scale,
+                   z: scale
+               });
+               entity.setAttribute('gps-projected-entity-place', {
+                   latitude: feature.geometry.coordinates[0][1],
+                   longitude: feature.geometry.coordinates[0][0]
+               });
+
+               this.el.appendChild(entity);
+               entity = document.createElement('a-cone');
+             })
            }
            if(cone != null) {
              let conePosition = cone.getAttribute('gps-projected-entity-place');
@@ -66,8 +68,8 @@ AFRAME.registerComponent('peakfinder', {
              let angle = calculateAngle(lngDelta, latDelta);
              cone.setAttribute('rotation', {
                 x: 90,
-                y: 90,//angle,
-                z: 90,
+                y: angle,
+                z: 0
              });
            }
            cone = entity;
@@ -76,7 +78,7 @@ AFRAME.registerComponent('peakfinder', {
            console.log(feature.geometry.coordinates[0]);
 
          })
-         alert("foreach Done")
+         //alert("foreach Done")
          /*
         for (const key in json){
             if(json.hasOwnProperty(key)){
