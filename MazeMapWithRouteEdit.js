@@ -22,7 +22,7 @@ AFRAME.registerComponent('peakfinder', {
     },
     _loadPeaks: function(longitude, latitude) {
         //alert("Load Peaks");
-       const scale = 200;
+       const scale = 20;
        fetch("../routeData.json")
        .then(response => {
           return response.json();
@@ -31,7 +31,6 @@ AFRAME.registerComponent('peakfinder', {
             const cone = null;
             json.features.forEach(feature => {
                 if (feature.geometry.type === "Point") {
-                    alert("Point")
                     console.log(feature.geometry.coordinates[0]);
                     const entity = document.createElement('a-cone');
                     //entity.setAttribute('look-at', '[gps-projected-camera]');
@@ -47,7 +46,6 @@ AFRAME.registerComponent('peakfinder', {
                     });
                 }
                 else {
-                    alert("Not Point")
                     console.log(feature.geometry.coordinates[0]);
                     const entity = document.createElement('a-cone');
                     //entity.setAttribute('look-at', '[gps-projected-camera]');
@@ -76,7 +74,6 @@ AFRAME.registerComponent('peakfinder', {
                     });
                 }
                 this.el.appendChild(entity);
-                alert("Apparently Done")
                 console.log(feature.geometry.coordinates[0]);
 
                 })
