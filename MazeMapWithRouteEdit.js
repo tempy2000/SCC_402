@@ -24,7 +24,7 @@ AFRAME.registerComponent('peakfinder', {
           return response.json();
        })
        .then ( json => {
-          let cone = null;
+          //let cone = null;
 
          json.features.forEach(feature => {
            let entity = document.createElement('a-cone');
@@ -64,67 +64,31 @@ AFRAME.registerComponent('peakfinder', {
                entity = document.createElement('a-cone');
              })
            }
-           /*
-           if(cone != null) {
-             alert("cone was not null :)");
-             let conePosition = cone.getAttribute('gps-projected-entity-place');
-             let entityPosition = entity.getAttribute('gps-projected-entity-place');
-             let lngDelta = conePosition.longitude - entityPosition.longitude;
-             let latDelta = conePosition.latitude - entityPosition.latitude;
-             let angle = calculateAngle(lngDelta, latDelta);
-             cone.setAttribute('rotation', {
-                x: 90,
-                y: angle,
-                z: 0
-             });
-           } else {
-              alert("cone was null :(");
-           }*/
-           cone = entity;
+           //cone = entity;
            this.el.appendChild(entity);
            //alert("Apparently Done")
-           console.log(feature.geometry.coordinates[0]);
+           //console.log(feature.geometry.coordinates[0]);
 
          })
-         //alert("foreach Done")
-         /*
-        for (const key in json){
-            if(json.hasOwnProperty(key)){
-              console.log(`${key} : ${json[key].features[0].geometry.coordinates[0][0]}`)
-              console.log(`${key} : ${json[key].features[0].geometry.coordinates[0][1]}`)
-              const entity = document.createElement('a-cone');
-              //entity.setAttribute('look-at', '[gps-projected-camera]');
-              //entity.setAttribute('value', json[key].properties.name);
-              entity.setAttribute('scale', {
-                  x: scale,
-                  y: scale,
-                  z: scale
-              });
-              entity.setAttribute('gps-projected-entity-place', {
-                  latitude: json[key].features[0].geometry.coordinates[0][0],
-                  longitude: json[key].features[0].geometry.coordinates[0][1]
-              });
-              this.el.appendChild(entity);
-            }
-          }*/
-           /*json.features.filter ( f => f.type == 'Feature' )
-               .forEach ( Feature => {
-                   alert("Looping");
-                   const entity = document.createElement('a-text');
-                   entity.setAttribute('look-at', '[gps-projected-camera]');
-                   entity.setAttribute('value', 'test');
-                   entity.setAttribute('scale', {
-                       x: scale,
-                       y: scale,
-                       z: scale
-                   });
-                   entity.setAttribute('gps-projected-entity-place', {
-                       latitude: Feature.geometry.coordinates[0][1],
-                       longitude: Feature.geometry.coordinates[0][0]
-                   });
-                   this.el.appendChild(entity);
-               });*/
        });
+   },
+   _editRotation: function() {
+     let cone = document.getElementsByClassName('a-cone').slice(-1)
+     if(cone != null) {
+       alert("cone was not null :)");
+       let conePosition = cone.getAttribute('gps-projected-entity-place');
+       let entityPosition = entity.getAttribute('gps-projected-entity-place');
+       let lngDelta = conePosition.longitude - entityPosition.longitude;
+       let latDelta = conePosition.latitude - entityPosition.latitude;
+       let angle = calculateAngle(lngDelta, latDelta);
+       cone.setAttribute('rotation', {
+          x: 90,
+          y: angle,
+          z: 0
+       });
+     } else {
+        alert("cone was null :(");
+     }
    }
     /*_loadPeaks: function(longitude, latitude) {
        const scale = 2000;
