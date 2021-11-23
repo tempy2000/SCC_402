@@ -39,11 +39,11 @@ AFRAME.registerComponent('peakfinder', {
                  y: scale,
                  z: scale
              });
-             entity.object3D.rotation.set(
+             /*entity.object3D.rotation.set(
                 THREE.Math.degToRad(20),
                 THREE.Math.degToRad(180),
                 THREE.Math.degToRad(45)
-              );
+              );*/
              entity.setAttribute('gps-projected-entity-place', {
                  latitude: feature.geometry.coordinates[1],
                  longitude: feature.geometry.coordinates[0]
@@ -58,11 +58,11 @@ AFRAME.registerComponent('peakfinder', {
                    y: scale,
                    z: scale
                });
-               entity.object3D.rotation.set(
+               /*entity.object3D.rotation.set(
                   THREE.Math.degToRad(20),
                   THREE.Math.degToRad(180),
                   THREE.Math.degToRad(45)
-                );
+                );*/
                entity.setAttribute('gps-projected-entity-place', {
                    latitude: feature.geometry.coordinates[x][1],
                    longitude: feature.geometry.coordinates[x][0]
@@ -75,7 +75,7 @@ AFRAME.registerComponent('peakfinder', {
            }
            //cone = entity;
            this.el.appendChild(entity);
-           //_editRotation(entity);
+           _editRotation(entity);
            //alert("Apparently Done")
            //console.log(feature.geometry.coordinates[0]);
 
@@ -91,11 +91,11 @@ AFRAME.registerComponent('peakfinder', {
      let latDelta = conePosition.latitude - entityPosition.latitude;
      let angle = Math.atan2(latDelta, lngDelta) * 180 / Math.PI;
 
-     cone.setAttribute('rotation', {
-        x: 90,
-        y: angle,
-        z: 0
-     });
+     cone.object3D.rotation.set(
+        THREE.Math.degToRad(angle),
+        THREE.Math.degToRad(0),
+        THREE.Math.degToRad(0)
+      );
    }
     /*_loadPeaks: function(longitude, latitude) {
        const scale = 2000;
