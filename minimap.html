@@ -69,7 +69,7 @@
         map.addControl(new Mazemap.mapboxgl.NavigationControl());
 
         map.on("load", () => {
-            fetch("../routeData.json")
+            fetch("../route-data-updated.json")
                 .then(response => response.json())
                 .then(geojson => map.route.setPath(geojson))
                 .catch(err => console.error(err));
