@@ -66,6 +66,7 @@ AFRAME.registerComponent('peakfinder', {
            }
            //cone = entity;
            this.el.appendChild(entity);
+           _editRotation();
            //alert("Apparently Done")
            //console.log(feature.geometry.coordinates[0]);
 
