@@ -64,6 +64,7 @@ AFRAME.registerComponent('peakfinder', {
            }
            if(cone != null) {
              alert("cone was not null :)");
+             console.log("cone was not null :)");
              let conePosition = cone.getAttribute('gps-projected-entity-place');
              let entityPosition = entity.getAttribute('gps-projected-entity-place');
              let lngDelta = conePosition.longitude - entityPosition.longitude;
@@ -76,6 +77,7 @@ AFRAME.registerComponent('peakfinder', {
              });
            } else {
               alert("cone was null :(");
+              console.log("cone was null :(");
            }
            cone = entity;
            this.el.appendChild(entity);
