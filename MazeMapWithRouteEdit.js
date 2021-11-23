@@ -55,7 +55,7 @@ AFRAME.registerComponent('peakfinder', {
                    longitude: feature.geometry.coordinates[x][0]
                });
 
-               child = _editRotation(entity, previousEntity)
+               child = this._editRotation(entity, previousEntity)
                this.el.appendChild(child);
                previousEntity = entity
                x = x + 1
@@ -63,7 +63,7 @@ AFRAME.registerComponent('peakfinder', {
              })
            }
            //cone = entity;
-           child = _editRotation(entity, previousEntity)
+           child = this._editRotation(entity, previousEntity)
            this.el.appendChild(child);
            previousEntity = entity
          })
