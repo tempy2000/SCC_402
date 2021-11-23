@@ -51,26 +51,29 @@
     </a-scene>
 
     <script>
-        var map = new Mazemap.Map({
-            // container id specified in the HTML
+        const map = new Mazemap.Map({
             container: 'map',
-
             campuses: 341,
-
-            // initial position in lngLat format
             center: {
                 lat: 54.00530114985844,
                 lng: -2.78520552873465
             },
-
-            // initial zoom
             zoom: 18,
-
-            zLevel: 3
+            zLevel: 3,
+            scrollZoom: true,
+            doubleClickZoom: false,
+            touchZoomRotate: false,
         });
 
         // Add zoom and rotation controls to the map.
-        // map.addControl(new Mazemap.mapboxgl.NavigationControl());
+        map.addControl(new Mazemap.mapboxgl.NavigationControl());
+
+        map.on("load", () => {
+            fetch("../routeData.json")
+                .then(response => response.json())
+                .then(geojson => map.route.setPath(geojson))
+                .catch(err => console.error(err));
+        });
     </script>
 </body>
 
