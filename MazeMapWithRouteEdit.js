@@ -58,11 +58,11 @@ AFRAME.registerComponent('peakfinder', {
              });
            }
            if(cone != null) {
-             let conePosition = cone.getAttribute('position');
-             let entityPosition = entity.getAttribute('position');
-             let xDelta = conePosition.x - entityPosition.x;
-             let yDelta = conePosition.x - entityPosition.y;
-             let angle = calculateAngle(xDelta, yDelta);
+             let conePosition = cone.getAttribute('gps-projected-entity-place');
+             let entityPosition = entity.getAttribute('gps-projected-entity-place');
+             let lngDelta = conePosition.longitude - entityPosition.longitude;
+             let latDelta = conePosition.latitude - entityPosition.latitude;
+             let angle = calculateAngle(lngDelta, latDelta);
              cone.setAttribute('rotation', {
                 x: 0,
                 y: 0,
