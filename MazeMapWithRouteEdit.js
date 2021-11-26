@@ -81,8 +81,8 @@ AFRAME.registerComponent('peakfinder', {
 
        cone.object3D.rotation.set(
           THREE.Math.degToRad(0),
-          THREE.Math.degToRad(0),
-          THREE.Math.degToRad(angle)
+          THREE.Math.degToRad(-angle),
+          THREE.Math.degToRad(90)
         );
         return cone;
       }
