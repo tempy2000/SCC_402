@@ -55,8 +55,8 @@
         vr-mode-ui="enabled: false"
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
         renderer='antialias: true; alpha: true'>
-            <a-camera gps-projected-camera rotation-reader></a-camera>
-            <a-box gps-projected-entity-place='minDistance: 0; maxDistance: 5000;' material='color: red' scale='10 10 10'></a-box>
+            <a-camera gps-projected-camera='minDistance: 0; maxDistance: 5000;' rotation-reader></a-camera>
+            <a-box gps-projected-entity-place material='color: red' scale='10 10 10'></a-box>
             <a-entity peakfinder></a-entity>
         </a-scene>
     </body>
