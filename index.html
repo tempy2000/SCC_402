@@ -2,15 +2,55 @@
     <head>
         <title>AR.js Basic Projected Camera Example</title>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        
         <!-- Loading the modified version of A-Frame -->
         <script src="aframe-ar-nft.js"></script>
-        
         <!-- Look-at component. We don't need this now, but we will later. -->
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
         <script type='text/javascript' src='MazeMapWithRouteEdit.js'></script>
+        <style>
+
+          .buttons {
+            position: fixed;
+            display: inline-block;
+            top: 10px;
+            width:100%;
+            z-index: 1;
+          }
+
+          .button{
+            display: block;
+            border-radius: 6px;
+            background-color: white;
+            padding: 18px 44px;
+            margin: 15px;
+            font-weight: bold;
+          }
+
+          #showHide {
+            padding: 10px 12px;
+            margin-left: 0;
+            margin-top: 0;
+            min-width: 44px;
+            font-size: 20px;
+          }
+
+
+          #routeBtns {
+            display: none;
+
+          }
+
+        </style>
     </head>
     <body>
+      <div class="buttons">
+        <button onclick="toggleRoutesMenu()" id = "showHide" class="button">></button>
+        <div id="routeBtns">
+          <button onclick="setRoute(1)" id = "routeOneButton" class="button">Route 1</button>
+          <button onclick="setRoute(2)" id = "routeTwoButton" class="button">Route 2</button>
+          <button onclick="setRoute(3)" id = "routeThreeButton" class="button">Route 3</button>
+        </div>
+      </div>
     <a-scene
         vr-mode-ui="enabled: false"
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
@@ -21,6 +61,38 @@
         </a-scene>
     </body>
 </html>
+
+<script>
+
+  function toggleRoutesMenu() {
+    var btns = document.getElementById("routeBtns");
+
+    if (btns.style.display !== "block") {
+      btns.style.display = "block";
+      document.getElementById("showHide").innerHTML = "-";
+    } else {
+      btns.style.display = "none";
+      document.getElementById("showHide").innerHTML = ">";
+    }
+  }
+
+
+  function setRoute(route){
+
+    if (route === 1){
+      toggleRoutesMenu()
+    }
+    else if (route === 2){
+      toggleRoutesMenu()
+    }
+    else if (route === 3){
+      toggleRoutesMenu()
+    }
+
+  }
+
+
+</script>
 <!--<html>
 <!DOCTYPE html>
 <head>
