@@ -59,7 +59,9 @@ AFRAME.registerComponent('peakfinder', {
                    latitude: feature.geometry.coordinates[x][1],
                    longitude: feature.geometry.coordinates[x][0]
                });
-
+               let entityPosition = entity.getAttribute('gps-projected-entity-place');
+               console.log(entityPosition.latitude)
+               console.log(entityPosition.longitude)
                child = this._editRotation(entity, previousEntity)
                this.el.appendChild(child);
                previousEntity = entity
