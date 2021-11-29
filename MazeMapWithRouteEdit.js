@@ -79,6 +79,8 @@ AFRAME.registerComponent('peakfinder', {
 
        let conePosition = cone.getAttribute('gps-projected-entity-place');
        let entityPosition = entity.getAttribute('gps-projected-entity-place');
+       console.log("CONE POS: " + conePosition)
+       console.log("ENTITY POS: " + entityPosition)
        let lngDelta = conePosition.longitude - entityPosition.longitude;
        let latDelta = conePosition.latitude - entityPosition.latitude;
        let angle = Math.atan2(latDelta, lngDelta) * 180 / Math.PI;
