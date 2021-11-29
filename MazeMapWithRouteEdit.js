@@ -53,8 +53,8 @@ AFRAME.registerComponent('peakfinder', {
                    y: scale,
                    z: scale
                });
-               console.log(feature.geometry.coordinates[x][1)
-                 console.log(feature.geometry.coordinates[x][0])
+               console.log(feature.geometry.coordinates[x][1])
+              console.log(feature.geometry.coordinates[x][0])
                entity.setAttribute('gps-projected-entity-place', {
                    latitude: feature.geometry.coordinates[x][1],
                    longitude: feature.geometry.coordinates[x][0]
