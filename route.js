@@ -1,7 +1,7 @@
 
 AFRAME.registerComponent("route", {
 
-    _route_data: null,
+    route_data: null,
 
     schema: {
         routePath: {
@@ -20,6 +20,9 @@ AFRAME.registerComponent("route", {
 
     init: function () {
         this.loaded = false;
+        this.route_active = false;
+        this.route_id = this.el.id;
+
         console.debug("[route]: initialising route", this.data);
 
         // Validation
@@ -31,14 +34,10 @@ AFRAME.registerComponent("route", {
         // Triggers onclick listener
         if (this.data.toggleButton) {
             this.data.toggleButton.addEventListener("click", function (evt) {
-                console.debug(`[route]: button was clicked!`, evt);                
+                console.debug(`[route]: button was clicked!`, evt);
                 
-                // TODO:
-                // 1. add state "active-route"
-                // 2. hide all other routes
-                
-                // this.addState("route-toggled");
-                // _toggle_markers();
+                // Toggle state
+                this.route_active = !this.route_active;
             });
         }
 
@@ -46,9 +45,9 @@ AFRAME.registerComponent("route", {
 
         // Set the loaded data
         this._load_routing_data().then((res) => {
-            this._route_data = { ...res };
+            this.route_data = { ...res };
             this.loaded = true;
-            console.debug("[route]:", this._route_data);
+            console.debug("[route]:", this.route_data);
         });
     },
 
