@@ -1,3 +1,35 @@
+.route-selector-container {
+    position: fixed;
+    display: inline-block;
+    top: 10px;
+    width: 100%;
+    z-index: 1;
+}
+
+.route-button {
+    display: block;
+    border-radius: 6px;
+    background-color: white;
+    padding: 18px 44px;
+    margin: 15px;
+    font-weight: bold;
+}
+
+#show-hide {
+    padding: 10px 12px;
+    margin-left: 0;
+    margin-top: 0;
+    min-width: 44px;
+    font-size: 20px;
+}
+
+
+#route-buttons {
+    display: none;
+    
+}
+
+
 * {
     margin: 0;
     padding: 0;
