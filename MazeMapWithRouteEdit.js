@@ -17,87 +17,92 @@ AFRAME.registerComponent('peakfinder', {
         });
     },
     _loadPeaks: function(longitude, latitude) {
-        //alert("Load Peaks");
-       const scale = 5;
-       fetch("../routeData.json")
-       .then(response => {
-          return response.json();
-       })
-       .then ( json => {
-          let previousEntity = null;
-          let eCoords = null;
-          let pCoords = null;
-          let child = null;
-         json.features.forEach(feature => {
-           let entity = document.createElement('a-cone');
-           if (feature.geometry.type === "Point") {
-             console.log("Point")
+       //alert("Load Peaks");
+      const scale = 3;
+      fetch("../routeData.json")
+      .then(response => {
+         return response.json();
+      })
+      .then ( json => {
+         let previousEntity = null;
+         let eCoords = null;
+         let pCoords = null;
+         let child = null;
+        json.features.forEach(feature => {
+          let entity = document.createElement('a-cone');
+          if (feature.geometry.type === "Point") {
+            console.log("Point")
 
+             entity.setAttribute('scale', {
+                x: scale,
+                y: scale,
+                z: scale
+            });
+            eCoords = {latitude: feature.geometry.coordinates[1], longitude: feature.geometry.coordinates[0]}
+            entity.setAttribute('gps-projected-entity-place', {
+                latitude: feature.geometry.coordinates[1],
+                longitude: feature.geometry.coordinates[0]
+            });
+
+            child = this._editRotation(eCoords, pCoords, entity, previousEntity)
+            console.log(child)
+            this.el.appendChild(child);
+            previousEntity = entity
+            pCoords = eCoords
+          } else {
+            console.log("Not Point")
+            let x = 0
+            feature.geometry.coordinates.forEach(coordinates => {
               entity.setAttribute('scale', {
-                 x: scale,
-                 y: scale,
-                 z: scale
-             });
-             eCoords = {latitude: feature.geometry.coordinates[1], longitude: feature.geometry.coordinates[0]}
-             entity.setAttribute('gps-projected-entity-place', {
-                 latitude: feature.geometry.coordinates[1],
-                 longitude: feature.geometry.coordinates[0]
-             });
+                  x: scale,
+                  y: scale,
+                  z: scale
+              });
+              eCoords = {latitude: feature.geometry.coordinates[x][1],longitude: feature.geometry.coordinates[x][0]}
+              entity.setAttribute('gps-projected-entity-place', {
+                  latitude: feature.geometry.coordinates[x][1],
+                  longitude: feature.geometry.coordinates[x][0]
+              });
 
-             child = this._editRotation(eCoords, pCoords, entity, previousEntity)
-             console.log(child)
-             this.el.appendChild(child);
-             previousEntity = entity
-             pCoords = eCoords
-           } else {
-             console.log("Not Point")
-             let x = 0
-             feature.geometry.coordinates.forEach(coordinates => {
-               entity.setAttribute('scale', {
-                   x: scale,
-                   y: scale,
-                   z: scale
-               });
-               eCoords = {latitude: feature.geometry.coordinates[x][1],longitude: feature.geometry.coordinates[x][0]}
-               entity.setAttribute('gps-projected-entity-place', {
-                   latitude: feature.geometry.coordinates[x][1],
-                   longitude: feature.geometry.coordinates[x][0]
-               });
+              if (x > 0) {
+               child = this._editRotation(eCoords, pCoords, entity, previousEntity)
+              }
+              else {
+                child = this._editRotation(0, 0, entity, previousEntity)
+              }
+              child.setAttribute('position', {
+                  x: 0,
+                  y: -10,
+                  z: 0
+              });
+              this.el.appendChild(child);
+              previousEntity = entity
+              pCoords = eCoords
+              x = x + 1
+             entity = document.createElement('a-cone');
+            })
+          }
+          //cone = entity;
+        })
+      });
+  },
+  _editRotation: function(entityPosition, conePosition, entity, previousEntity) {
+    if (previousEntity != null) {
+      let lngDelta = conePosition.longitude - entityPosition.longitude;
+      let latDelta = conePosition.latitude - entityPosition.latitude;
+      let angle = Math.atan2(latDelta, lngDelta) * 180 / Math.PI;
 
-               if (x > 0) {
-                child = this._editRotation(eCoords, pCoords, entity, previousEntity)
-               }
-               else {
-                 child = this._editRotation(0, 0, entity, previousEntity)
-               }
-               this.el.appendChild(child);
-               previousEntity = entity
-               pCoords = eCoords
-               x = x + 1
-              entity = document.createElement('a-cone');
-             })
-           }
-           //cone = entity;
-         })
-       });
-   },
-   _editRotation: function(entityPosition, conePosition, entity, previousEntity) {
-     if (previousEntity != null) {
-       let lngDelta = conePosition.longitude - entityPosition.longitude;
-       let latDelta = conePosition.latitude - entityPosition.latitude;
-       let angle = Math.atan2(latDelta, lngDelta) * 180 / Math.PI;
-
-       previousEntity.object3D.rotation.set(
-          THREE.Math.degToRad(0),
-          THREE.Math.degToRad(-angle),
-          THREE.Math.degToRad(90)
-        );
-        return previousEntity;
-      }
-      else {
-        return entity;
-      }
-   }
+      previousEntity.object3D.rotation.set(
+         THREE.Math.degToRad(0),
+         THREE.Math.degToRad(angle),
+         THREE.Math.degToRad(90)
+       );
+       return previousEntity;
+     }
+     else {
+       return entity;
+     }
+  }
 });
 
 // The map

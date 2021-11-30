@@ -51,14 +51,14 @@
           <button onclick="setRoute(3)" id = "routeThreeButton" class="button">Route 3</button>
         </div>
       </div>
-    <a-scene
-        vr-mode-ui="enabled: false"
-        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
-        renderer='antialias: true; alpha: true'>
-            <a-camera gps-projected-camera='minDistance: 0; maxDistance: 5000;' rotation-reader></a-camera>
-            <a-box gps-projected-entity-place material='color: red' scale='10 10 10'></a-box>
-            <a-entity peakfinder></a-entity>
-        </a-scene>
+      <a-scene
+          vr-mode-ui="enabled: false"
+          arjs='sourceType: webcam; sourceWidth:1080; sourceHeight:2160; displayWidth: 1080; displayHeight: 2160; videoTexture: true; debugUIEnabled: false;'
+          renderer='antialias: true; alpha: true'>
+              <a-camera gps-projected-camera='minDistance: 0; maxDistance: 5000;' rotation-reader></a-camera>
+              <a-box gps-projected-entity-place material='color: red' scale='10 10 10'></a-box>
+              <a-entity peakfinder></a-entity>
+          </a-scene>
     </body>
 </html>
 
