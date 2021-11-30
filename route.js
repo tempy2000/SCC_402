@@ -37,7 +37,6 @@ AFRAME.registerComponent("route", {
                 console.debug(`[route]: button was clicked!`, evt);
                 
                 // Toggle state
-                setState
             });
         }
 
