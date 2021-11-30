@@ -32,7 +32,7 @@ AFRAME.registerComponent('peakfinder', {
           let entity = document.createElement('a-cone');
           if (feature.geometry.type === "Point") {
             console.log("Point")
-
+/*
              entity.setAttribute('scale', {
                 x: scale,
                 y: scale,
@@ -48,7 +48,7 @@ AFRAME.registerComponent('peakfinder', {
             console.log(child)
             this.el.appendChild(child);
             previousEntity = entity
-            pCoords = eCoords
+            pCoords = eCoords*/
           } else {
             console.log("Not Point")
             let x = 0
