@@ -9,8 +9,7 @@ var orientationObject = new Object();
 var hasStopped = false;
 var hasSentToServer = false;
 
-function start(id) {
-  jsonObject.routeId = id;
+function start() {
   jsonObject.startTimestamp = Date.now();
   jsonObject.positionData = [];
   window.addEventListener("deviceorientation", handleOrientation, true);
@@ -19,7 +18,7 @@ function start(id) {
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
       var positionDataObject = new Object();
-      positionDataObject.timeStamp = Date.now();
+      positionDataObject.timestamp = Date.now();
       positionDataObject.latitude = latitude;
       positionDataObject.longitude = longitude;
       positionDataObject.orientation = orientationObject;
@@ -28,6 +27,7 @@ function start(id) {
     }
     if(hasStopped && !hasSentToServer) {
       hasSentToServer = true;
+      jsonObject.endTimestamp = Date.now();
       console.log(JSON.stringify(jsonObject));
     }
   });
@@ -35,6 +35,10 @@ function start(id) {
 
 function stop() {
   hasStopped = true;
+}
+
+function setRouteId(id) {
+  jsonObject.routeId = id;
 }
 
 function handleOrientation(event) {
