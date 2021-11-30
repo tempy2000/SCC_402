@@ -4,8 +4,45 @@ fetch("../routeData.json")
 })
 .then(jsondata => console.log(jsondata));
 
+var jsonObject = new Object();
+var orientationObject = new Object();
+var hasStopped = false;
+
+function setRouteId(id) {
+  jsonObject.routeId = id;
+  jsonObject.startTimestamp = Date.now();
+  jsonObject.positionData = [];
+  window.addEventListener("deviceorientation", handleOrientation, true);
+  navigator.geolocation.watchPosition(position => {
+    if(!hasStopped) {
+      var latitude  = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      var positionDataObject = new Object();
+      positionDataObject.latitude = latitude;
+      positionDataObject.longitude = longitude;
+      positionDataObject.timeStamp = Date.now();
+      positionDataObject.orientation = orientationObject;
+  
+      jsonObject.positionData.push(positionDataObject);
+      console.log(JSON.stringify(jsonObject));
+    }
+  });
+}
+
+function handleOrientation(event) {
+  orientationObject.absolute = event.absolute;
+  orientationObject.alpha = event.alpha; // Rotation around Z 0 to 360
+  orientationObject.beta = event.beta; // Rotation around the X -180 to 180
+  orientationObject.gamma = event.gamma; // Rotation around the Y -90 to 90
+}
+
+function stop() {
+  hasStopped = true;
+}
+
 AFRAME.registerComponent('peakfinder', {
     init: function() {
+        setRouteId(0);
         this.loaded = false;
         //alert(this.loaded);
         window.addEventListener('gps-camera-update-position', e => {
