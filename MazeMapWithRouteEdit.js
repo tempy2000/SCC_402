@@ -7,8 +7,9 @@ fetch("../routeData.json")
 var jsonObject = new Object();
 var orientationObject = new Object();
 var hasStopped = false;
+var hasSentToServer = false;
 
-function setRouteId(id) {
+function start(id) {
   jsonObject.routeId = id;
   jsonObject.startTimestamp = Date.now();
   jsonObject.positionData = [];
@@ -18,15 +19,22 @@ function setRouteId(id) {
       var latitude  = position.coords.latitude;
       var longitude = position.coords.longitude;
       var positionDataObject = new Object();
+      positionDataObject.timeStamp = Date.now();
       positionDataObject.latitude = latitude;
       positionDataObject.longitude = longitude;
-      positionDataObject.timeStamp = Date.now();
       positionDataObject.orientation = orientationObject;
   
       jsonObject.positionData.push(positionDataObject);
+    }
+    if(hasStopped && !hasSentToServer) {
+      hasSentToServer = true;
       console.log(JSON.stringify(jsonObject));
     }
   });
+}
+
+function stop() {
+  hasStopped = true;
 }
 
 function handleOrientation(event) {
@@ -36,13 +44,11 @@ function handleOrientation(event) {
   orientationObject.gamma = event.gamma; // Rotation around the Y -90 to 90
 }
 
-function stop() {
-  hasStopped = true;
-}
+
 
 AFRAME.registerComponent('peakfinder', {
     init: function() {
-        setRouteId(0);
+        start(0);
         this.loaded = false;
         //alert(this.loaded);
         window.addEventListener('gps-camera-update-position', e => {
