@@ -19,7 +19,7 @@ AFRAME.registerComponent("peakfinder", {
     },
     _load_buildings: async function (longitude, latitude) {
         // Load the buildings from local json file
-        const buildings = await fetch("../data/buildings-data-reduced.json")
+        const buildings = await fetch("../buildings-data-reduced.json")
             .then(res => res.json())
             .catch(err => console.error(err));
 
