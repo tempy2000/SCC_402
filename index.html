@@ -37,7 +37,12 @@
 
           #routeBtns {
             display: none;
+          }
 
+          .startStop {
+            position: absolute; 
+            right: 0;
+            z-index: 1;
           }
 
         </style>
@@ -51,6 +56,9 @@
           <button onclick="setRoute(3)" id = "routeThreeButton" class="button">Route 3</button>
         </div>
       </div>
+      <div class="startStop">
+        <button onclick="toggleStartStopButton()" id = "startStopButton" class="button">Start</button>
+      </div>
       <a-scene
           vr-mode-ui="enabled: false"
           arjs='sourceType: webcam; sourceWidth:1080; sourceHeight:2160; displayWidth: 1080; displayHeight: 2160; videoTexture: true; debugUIEnabled: false;'
@@ -63,8 +71,19 @@
 </html>
 
 <script>
+function toggleStartStopButton() {
+  var button = document.getElementById("startStopButton");
+  if(button.innerHTML=="Start"){
+    start();
+    button.innerHTML="Stop";
+  }
+  else if(button.innerHTML=="Stop"){
+    stop();
+    button.innerHTML="Start";
+  }
+}
 
-  function toggleRoutesMenu() {
+function toggleRoutesMenu() {
     var btns = document.getElementById("routeBtns");
 
     if (btns.style.display !== "block") {
@@ -78,7 +97,7 @@
 
 
   function setRoute(route){
-
+    setRouteId(route);
     if (route === 1){
       toggleRoutesMenu()
     }
