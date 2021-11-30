@@ -37,7 +37,7 @@ AFRAME.registerComponent("route", {
                 console.debug(`[route]: button was clicked!`, evt);
                 
                 // Toggle state
-                this.route_active = !this.route_active;
+                setState
             });
         }
 
@@ -68,7 +68,7 @@ AFRAME.registerComponent("route", {
     _load_route_path: async function () {
         console.debug("[route]: loading route path");
 
-        let response = await fetch(`../data/routing/path/${this.data.routePath}`);
+        let response = await fetch(`../routing/path/${this.data.routePath}`);
 
         if (!response.ok) {
             console.error("[route]: failed to load route path", response.status);
@@ -80,7 +80,7 @@ AFRAME.registerComponent("route", {
     _load_route_directions: async function () {
         console.debug("[route]: loading route directions");
 
-        let response = await fetch(`../data/routing/directions/${this.data.routeDirections}`);
+        let response = await fetch(`../routing/directions/${this.data.routeDirections}`);
 
         if (!response.ok) {
             console.error("[route]: failed to load route directions", response.status);
