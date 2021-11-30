@@ -23,7 +23,7 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
 
     <!-- Custom styles and scripts -->
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <script type="text/javascript" src="route.js"></script>
     <script type="text/javascript" src="peakfinder.js"></script>
 </head>
@@ -96,6 +96,7 @@
             // Added "toggle-ability" to route buttons
             btn_route_buttons.querySelectorAll("button[id^=btn-route-]").forEach(btn => {
                 btn.addEventListener("click", toggle_route_menu, false);
+                btn.addEventListener("click", toggle_route_state, false);
             });
         });
     </script>
