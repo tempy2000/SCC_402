@@ -1,17 +1,105 @@
-<html>
 <!DOCTYPE html>
-<head>
-    <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
-    <meta charset="utf-8" />
-    <script type='text/javascript' src='https://api.mazemap.com/js/v2.0.56/mazemap.min.js'></script>
-    <link rel="stylesheet" href="https://api.mazemap.com/js/v2.0.56/mazemap.min.css">
+<html>
 
-    <style>
-        body { margin:0px; padding:0px; width: 100%; height:100%; }
-    </style>
+<head>
+    <!-- <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" /> -->
+
+    <title>AR.js Basic Projected Camera Example</title>
+
+    <!-- MazeMaps -->
+    <link rel="stylesheet" href="https://api.mazemap.com/js/v2.0.9/mazemap.min.css">
+    <script type="text/javascript" src="https://api.mazemap.com/js/v2.0.9/mazemap.min.js"></script>
+
+    <!-- AR.js -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <!-- Using the modified version of aframe-ar-nft which includes maxDistance on gps-projected-camera -->
+    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
+    <script type="text/javascript" src="js/aframe-ar-nft.js"></script>
+
+    <!-- Look-at component. We don"t need this now, but we will later. -->
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+
+    <!-- Custom styles and scripts -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    <script type="text/javascript" src="js/route-system.js"></script>
+    <script type="text/javascript" src="js/route.js"></script>
 </head>
+
 <body>
-    <div id="map" class="mazemap"></div>
-    <script src="MazeMapWithRouteEdit.js"></script>
+    <div class="route-selector-container">
+        <button id="show-hide" class="route-button">&gt</button>
+        <div id="route-buttons">
+            <button id="btn-route-a" class="route-button">Route 1</button>
+            <button id="btn-route-b" class="route-button">Route 2</button>
+            <button id="btn-route-c" class="route-button">Route 3</button>
+            <!-- TODO: add this -->
+            <!-- <button id="btn-clear-routes" class="route-button">Clear All</button> -->
+        </div>
+    </div>
+
+    <a-scene vr-mode-ui="enabled: false"
+        renderer="antialias: true; alpha: true;"
+        arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
+
+        <!-- GLTF 2.0 Assets -->
+        <a-assets>
+            <a-asset-item id="marker-model" src="data/models/marker.gltf"></a-asset-item>
+            <a-asset-item id="arrow-model" src="data/models/arrow.gltf"></a-asset-item>
+        </a-assets>
+
+        <!-- minDistance and maxDistance are in meters (0 = disabled) and used to show or hide objects are certain distance -->
+        <!-- <a-camera gps-projected-camera="minDistance: 0; maxDistance 500;" rotation-reader></a-camera> -->
+        <!-- Realistically we probably only want to include some labels to minimise information overloading -->
+        <!-- <a-camera gps-projected-camera="maxDistance: 10;" rotation-reader></a-camera> -->
+        <a-camera gps-projected-camera="minDistance: 5; maxDistance: 220;" rotation-reader></a-camera>
+        
+        <!-- Routes -->
+        <a-entity id="route_a"
+            route="routePath: greggs-to-hotel.json; routeDirections: greggs-to-hotel.json;">
+        </a-entity>
+        <a-entity id="route_b"
+            route="routePath: bhs-to-iss.json; routeDirections: bhs-to-iss.json;">
+        </a-entity>
+        <a-entity id="route_c"
+            route="routePath: sports-centre-to-john-creed.json; routeDirections: sports-centre-to-john-creed.json;">
+        </a-entity>
+
+        <!-- <a-gltf-model src="#marker"></a-gltf-model> -->
+    </a-scene>
+
+    <script>
+        // Wait for the application to fully load before attempting to figure out the controllers
+        window.addEventListener("load", (evt) => {
+
+            const btn_show_hide = document.querySelector("#show-hide");
+            const btn_route_buttons = document.querySelector("#route-buttons");
+
+            // Toggling the route menu
+            function toggle_route_menu(evt) {
+                console.debug("[toggle]: toggling route menu");
+
+                if (btn_route_buttons.style.display !== "block") {
+                    btn_route_buttons.style.display = "block";
+                    btn_show_hide.textContent = "-";
+                } else {
+                    btn_route_buttons.style.display = "none";
+                    btn_show_hide.textContent = ">";
+                }
+            }
+
+            // Route menu button click handler
+            btn_show_hide.addEventListener("click", toggle_route_menu, false);
+
+            // Added "toggle-ability" to route buttons
+            btn_route_buttons.querySelectorAll("button[id^=btn-route-]").forEach(btn => {
+                btn.addEventListener("click", toggle_route_menu, false);
+            });
+        });
+    </script>
 </body>
+
 </html>
