@@ -1,8 +1,6 @@
 
 AFRAME.registerComponent("route", {
 
-    route_data: null,
-
     schema: {
         routePath: {
             type: "string",
@@ -11,16 +9,27 @@ AFRAME.registerComponent("route", {
         routeDirections: {
             type: "string",
             default: ""
-        }
+        },
+        arrowScale: {
+            type: "number",
+            default: 2,
+        },
+        markerScale: {
+            type: "number",
+            default: 2,
+        },
     },
 
     init: function () {
-        console.debug("[route]: initialising route", this.data);
+        console.debug(`[route]: initialising route ${this.data}`);
 
         // State
         this.loaded = false;
-        this.route_active = false;
+        this.is_active = false;
         this.route_id = this.el.id;
+        this.route_data = null,
+        this.arrow_scale = this.data.arrowScale;
+        this.marker_scale = this.data.markerScale;
 
         // Register route to system
         this.system.register(this.el);
@@ -38,25 +47,17 @@ AFRAME.registerComponent("route", {
             console.debug("[route]:", this.route_data);
         });
 
-        // Create listeners
-        this.update_position_listener = (evt) => {
-            // console.debug("[route]:", evt.detail.position);
-        };
-
-        // Register listeners
-        window.addEventListener("gps-camera-update-position", this.update_position_listener);
+        // Bind self to remove
+        this.remove.bind(this);
     },
 
     remove: function () {
-        // Removing any listeners
-        window.removeEventListener("gps-camera-update-position", this.update_position_listener);
-
-        // Unregister from system
+        // Unregister route from system
         this.system.unregister(this.el);
     },
 
     show_markers: function () {
-        console.debug("[route]: creating route marker for", this.route_id);
+        console.debug(`[route]: creating route markers for ${this.route_id}`);
 
         // Ignore current point if equal to previous
         const equals_previous = (previous = [], current = []) => {
@@ -80,7 +81,6 @@ AFRAME.registerComponent("route", {
             .map(point => ({ latitude: point[1], longitude: point[0] }));
 
         // Generate points in reverse
-        const scale = 3;
         const total = points.length - 1;
 
         for (let i = total; i >= 0; i--) {
@@ -93,25 +93,33 @@ AFRAME.registerComponent("route", {
 
                 // Rotate to always face the camera
                 marker_entity.setAttribute("look-at", "[gps-projected-camera]")
+
+                // Set appropriate scale
+                marker_entity.setAttribute("scale", {
+                    x: this.marker_scale,
+                    y: this.marker_scale,
+                    z: this.marker_scale,
+                });
             } else {
                 // Otherwise, place orientated arrow marker point from "current" to "target".
                 marker_entity = document.createElement("a-entity");
                 marker_entity.setAttribute("gltf-model", "#arrow-model");
 
-                // Rotate to always face the target point
+                // Rotate to always face the target marker
                 marker_entity.setAttribute("look-at", `[data-point-index="${i + 1}"]`)
+
+                // Set appropriate scale
+                marker_entity.setAttribute("scale", {
+                    x: this.arrow_scale,
+                    y: this.arrow_scale,
+                    z: this.arrow_scale,
+                });
             }
             
             // Initially all markers made not visible as gps camera distance culling can execute after
             // the initial marker render cycle.
             marker_entity.setAttribute("visible", "false");
             marker_entity.setAttribute("data-point-index", i);
-            
-            marker_entity.setAttribute("scale", {
-                x: scale,
-                y: scale,
-                z: scale
-            });
 
             marker_entity.setAttribute("gps-projected-entity-place", {
                 latitude: points[i].latitude,
@@ -124,7 +132,7 @@ AFRAME.registerComponent("route", {
     },
 
     hide_markers: function () {
-        console.debug("[route]: removing route marker for", this.route_id);
+        console.debug(`[route]: removing route marker for ${this.route_id}`);
 
         this.el.querySelectorAll("a-entity[gltf-model]").forEach(marker_entity => {
             marker_entity.parentEl.removeChild(marker_entity);
@@ -144,7 +152,7 @@ AFRAME.registerComponent("route", {
     _load_route_path: async function () {
         console.debug("[route]: loading route path");
 
-        let response = await fetch(`../data/routing/path/${this.data.routePath}`);
+        const response = await fetch(`../data/routing/path/${this.data.routePath}`);
 
         if (!response.ok) {
             console.error("[route]: failed to load route path", response.status);
@@ -156,7 +164,7 @@ AFRAME.registerComponent("route", {
     _load_route_directions: async function () {
         console.debug("[route]: loading route directions");
 
-        let response = await fetch(`../data/routing/directions/${this.data.routeDirections}`);
+        const response = await fetch(`../data/routing/directions/${this.data.routeDirections}`);
 
         if (!response.ok) {
             console.error("[route]: failed to load route directions", response.status);

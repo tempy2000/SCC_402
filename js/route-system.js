@@ -3,76 +3,73 @@
  */
 AFRAME.registerSystem("route", {
 
-    // schema: {
-    //     buttonA: {
-    //         type: "selector",
-    //         default: null,
-    //     },
-    //     buttonB: {
-    //         type: "selector",
-    //         default: null,
-    //     },
-    //     buttonC: {
-    //         type: "selector",
-    //         default: null,
-    //     }
-    // },
-
-    active_route: null,
-
     init: function () {
         // Set initial route collection
         this.routes = [];
+        this.active_route = null;
+        this.is_logging = false;
 
         // Get the buttons
-        this.buttonA = document.querySelector("#btn-route-a");
-        this.buttonB = document.querySelector("#btn-route-b");
-        this.buttonC = document.querySelector("#btn-route-c");
+        this.button_a = document.querySelector("#btn-route-a");
+        this.button_b = document.querySelector("#btn-route-b");
+        this.button_c = document.querySelector("#btn-route-c");
 
-        if (!this.buttonA || !this.buttonB || !this.buttonC) {
-            console.error("Invalid or missing values for at least one of buttonA, buttonB, and buttonC");
+        // Validate buttons
+        if (!this.button_a || !this.button_b || !this.button_c) {
+            console.error("[route-system]: invalid or missing values for at least one of 'buttonA', 'buttonB', and 'buttonC'");
             return;
         }
 
-        // Position update listener
-        this.update_position_listener = (evt) => {
-            console.debug("[route-system]:", evt.detail.position);
-
-            if (this.active_route !== null) {
-                // Debug message if user too far from all points
-                const entities = this.active_route.querySelectorAll("a-entity[gltf-model]");
-                
-                // If there are entities but none of them are visible
-                if (entities.length > 0 && !Array.prototype.some.call(entities, x => x.components.visible.data)) {
-                    console.debug("[route-system]: device too far no markers are visible");
-                }
-            }
-        };
-
-        // Register listeners
-        window.addEventListener("gps-camera-update-position", this.update_position_listener);
-
         // Button click handler
-        this.handle_click = (evt, route) => {
-            console.debug("[route-system]:", evt);
-            console.debug("[route-system]:", route);
+        this.update_route = (route) => {
+
+            // Validate
+            if (this.is_logging) {
+                console.error("[route-system]: cannot change route whilst logging session currently active");
+                window.alert("Route cannot be changed whilst a logging session is currently active")
+                return;
+            }
 
             // Hide previously active route
             if (this.active_route !== null) {
                 this.active_route.components.route.hide_markers();
             }
 
-            // Update active route
+            // Update the active route
             this.active_route = route;
+        
+            // Dispatch set active route event
+            window.dispatchEvent(new CustomEvent("set-active-route", { detail: { id: this.active_route.id } }));
 
-            // Show current route
+            // Show active route
             this.active_route.components.route.show_markers();
-        }
+        };        
 
-        // Button click event listeners
-        this.buttonA.addEventListener("click", (evt) => this.handle_click(evt, this.routes[0]));
-        this.buttonB.addEventListener("click", (evt) => this.handle_click(evt, this.routes[1]));
-        this.buttonC.addEventListener("click", (evt) => this.handle_click(evt, this.routes[2]));
+        // Logging started handler
+        this.logging_started_listener = () => {
+            this.is_logging = true;
+        };
+
+        // Logging terminated handler
+        this.logging_terminated_listener = () => {
+            this.is_logging = false;
+        };
+
+        // Register listeners
+        this.button_a.addEventListener("click", () => this.update_route(this.routes[0]));
+        this.button_b.addEventListener("click", () => this.update_route(this.routes[1]));
+        this.button_c.addEventListener("click", () => this.update_route(this.routes[2]));
+
+        window.addEventListener("logging-started", this.logging_started_listener, false);
+        window.addEventListener("logging-terminated", this.logging_terminated_listener, false);
+
+        // Bind self to remove
+        this.remove.bind(this);
+    },
+
+    remove: function() {
+        window.removeEventListener("logging-started", this.logging_started_listener);
+        window.removeEventListener("logging-terminated", this.logging_terminated_listener);
     },
 
     register: function (entity) {

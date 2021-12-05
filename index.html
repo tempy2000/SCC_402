@@ -25,20 +25,26 @@
     <!-- Custom styles and scripts -->
     <link rel="stylesheet" href="css/stylesheet.css">
 
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/session-cookies.js"></script>
+    <script type="text/javascript" src="js/logger.js"></script>
     <script type="text/javascript" src="js/route-system.js"></script>
     <script type="text/javascript" src="js/route.js"></script>
 </head>
 
 <body>
     <div class="route-selector-container">
-        <button id="show-hide" class="route-button">&gt</button>
+        <button id="btn-show-hide" class="ui-button">&gt</button>
+
         <div id="route-buttons">
-            <button id="btn-route-a" class="route-button">Route 1</button>
-            <button id="btn-route-b" class="route-button">Route 2</button>
-            <button id="btn-route-c" class="route-button">Route 3</button>
-            <!-- TODO: add this -->
-            <!-- <button id="btn-clear-routes" class="route-button">Clear All</button> -->
+            <button id="btn-route-a" class="ui-button">Route 1</button>
+            <button id="btn-route-b" class="ui-button">Route 2</button>
+            <button id="btn-route-c" class="ui-button">Route 3</button>
         </div>
+    </div>
+
+    <div class="logging-selector-container">
+        <button id="btn-toggle-logging" class="ui-button">Start</button>
     </div>
 
     <a-scene vr-mode-ui="enabled: false"
@@ -51,36 +57,34 @@
             <a-asset-item id="arrow-model" src="data/models/arrow.gltf"></a-asset-item>
         </a-assets>
 
-        <!-- minDistance and maxDistance are in meters (0 = disabled) and used to show or hide objects are certain distance -->
-        <!-- <a-camera gps-projected-camera="minDistance: 0; maxDistance 500;" rotation-reader></a-camera> -->
-        <!-- Realistically we probably only want to include some labels to minimise information overloading -->
-        <!-- <a-camera gps-projected-camera="maxDistance: 10;" rotation-reader></a-camera> -->
-        <a-camera gps-projected-camera="minDistance: 5; maxDistance: 220;" rotation-reader></a-camera>
-        
+        <!-- Camera -->
+        <a-camera gps-projected-camera="minDistance: 5; maxDistance: 80;" rotation-reader></a-camera>
+
+        <!-- Logger -->
+        <a-entity logger="interval: 1000; batched: true; batchSize: 60"></a-entity>
+
         <!-- Routes -->
-        <a-entity id="route_a"
+        <a-entity id="route-a"
             route="routePath: greggs-to-hotel.json; routeDirections: greggs-to-hotel.json;">
         </a-entity>
-        <a-entity id="route_b"
+        <a-entity id="route-b"
             route="routePath: bhs-to-iss.json; routeDirections: bhs-to-iss.json;">
         </a-entity>
-        <a-entity id="route_c"
+        <a-entity id="route-c"
             route="routePath: sports-centre-to-john-creed.json; routeDirections: sports-centre-to-john-creed.json;">
         </a-entity>
-
-        <!-- <a-gltf-model src="#marker"></a-gltf-model> -->
     </a-scene>
 
     <script>
-        // Wait for the application to fully load before attempting to figure out the controllers
         window.addEventListener("load", (evt) => {
 
-            const btn_show_hide = document.querySelector("#show-hide");
+            // Routing
+            const btn_show_hide = document.querySelector("#btn-show-hide");
             const btn_route_buttons = document.querySelector("#route-buttons");
 
             // Toggling the route menu
             function toggle_route_menu(evt) {
-                console.debug("[toggle]: toggling route menu");
+                console.debug("[ui]: toggling route menu");
 
                 if (btn_route_buttons.style.display !== "block") {
                     btn_route_buttons.style.display = "block";
@@ -98,7 +102,19 @@
             btn_route_buttons.querySelectorAll("button[id^=btn-route-]").forEach(btn => {
                 btn.addEventListener("click", toggle_route_menu, false);
             });
+
+            // Logging
+            const btn_toggle_logging = document.querySelector("#btn-toggle-logging");
+
+            window.addEventListener("logging-started", (evt) => {
+                btn_toggle_logging.textContent = "Stop";
+            });
+
+            window.addEventListener("logging-terminated", (evt) => {
+                btn_toggle_logging.textContent = "Start";
+            });
         });
+
     </script>
 </body>
 
