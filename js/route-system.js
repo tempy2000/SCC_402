@@ -38,8 +38,13 @@ AFRAME.registerSystem("route", {
             // Update the active route
             this.active_route = route;
         
-            // Dispatch set active route event
-            window.dispatchEvent(new CustomEvent("set-active-route", { detail: { id: this.active_route.id } }));
+            // Dispatch set active route event - adding active route for minimap support
+            window.dispatchEvent(new CustomEvent("set-active-route", { 
+                detail: {
+                    active_route: this.active_route,
+                    id: this.active_route.id
+                }
+            }));
 
             // Show active route
             this.active_route.components.route.show_markers();
