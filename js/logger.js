@@ -21,6 +21,7 @@
     is_logging: false,
     ssid: null,
     active_route_id: null,
+    app_id: null,
 
     orientation: {
         absolute: null,
@@ -39,6 +40,7 @@
 
     logger_collection: {
         ssid: null,
+        app_id : null,
         route_id: null,
         start: null,
         end: null,
@@ -115,6 +117,7 @@
 
                 this.logger_collection = {
                     ssid: this.ssid,
+                    app_id: this.app_id,
                     route_id: this.active_route_id,
                     start: timestamp,
                     end: timestamp,
@@ -208,6 +211,7 @@
             // Reset logger collection
             this.logger_collection = {
                 ssid: this.ssid,
+                app_id: this.app_id,
                 route_id: this.active_route_id,
                 start: timestamp,
                 end: timestamp,
