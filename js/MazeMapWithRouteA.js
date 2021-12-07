@@ -13,8 +13,12 @@ var route_controller;
 map.addControl(new Mazemap.mapboxgl.NavigationControl(), 'bottom-right');
 
 //switches used for methods
+
+// comment out trigger to prevent redraw of route
 var trigger = true;
+
 var first = true;
+
 
 //InfoLab
 var start = { lngLat: { lng: -2.7846447, lat: 54.0128025 } };
@@ -61,6 +65,7 @@ map.on("load", () => {
       }
     });
 
+    // comment out this section to prevent redraw of route
     if (trigger) {
       set_route({ lngLat: { lng: longitude, lat: latitude } }, end);
       trigger = false;
