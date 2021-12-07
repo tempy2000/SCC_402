@@ -220,5 +220,13 @@
     send: function (data) {
         // TODO: add send to server functionality
         console.debug("[logger]: sending logging data to server", data);
+        const xhr = new XMLHttpRequest();
+        const uri = "submit.php";
+
+        xhr.open("POST", uri, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        const json = JSON.stringify(logger_collection);
+        xhr.send(data);
     },
 });
