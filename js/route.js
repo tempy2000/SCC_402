@@ -12,7 +12,7 @@ AFRAME.registerComponent("route", {
         },
         arrowScale: {
             type: "number",
-            default: 2,
+            default: 1,
         },
         markerScale: {
             type: "number",
