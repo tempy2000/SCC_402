@@ -1,0 +1,80 @@
+<html>
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" id="vp" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://api.mazemap.com/js/v2.0.56/mazemap.min.css">
+    <script src="//geoip-js.com/js/apis/geoip2/v2.1/geoip2.js"></script>
+    <script type='text/javascript' src='https://api.mazemap.com/js/v2.0.56/mazemap.min.js'></script>
+    <script type="text/javascript" src="js/logger.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+    <style>
+        body { margin:0px; padding:0px; width: 100%; height:100%; }
+    </style>
+</head>
+<body>
+    <div id="map" class="mazemap"></div>
+
+    <!-- Route selection buttons -->
+    <div class="route-selector-container">
+        <button id="btn-show-hide" class="ui-button">&gt</button>
+
+        <div id="route-buttons">
+            <button id="btn-route-a" class="ui-button">Route 1</button>
+            <button id="btn-route-b" class="ui-button">Route 2</button>
+            <button id="btn-route-c" class="ui-button">Route 3</button>
+        </div>
+    </div>
+
+    <!-- Logging button -->
+    <div class="logging-selector-container">
+        <button id="btn-toggle-logging" class="ui-button">Start</button>
+    </div>
+
+    <script>
+        setAppId("AR");
+        window.addEventListener("load", (evt) => {
+
+            // Routing
+            const btn_show_hide = document.querySelector("#btn-show-hide");
+            const btn_route_buttons = document.querySelector("#route-buttons");
+
+            // Toggling the route menu
+            function toggle_route_menu(evt) {
+                console.debug("[ui]: toggling route menu");
+
+                if (btn_route_buttons.style.display !== "block") {
+                    btn_route_buttons.style.display = "block";
+                    btn_show_hide.textContent = "-";
+                } else {
+                    btn_route_buttons.style.display = "none";
+                    btn_show_hide.textContent = ">";
+                }
+            }
+
+            // Route menu button click handler
+            btn_show_hide.addEventListener("click", toggle_route_menu, false);
+
+            // Added "toggle-ability" to route buttons
+            btn_route_buttons.querySelectorAll("button[id^=btn-route-]").forEach(btn => {
+                btn.addEventListener("click", toggle_route_menu, false);
+            });
+
+            // Logging
+            const btn_toggle_logging = document.querySelector("#btn-toggle-logging");
+
+            window.addEventListener("logging-started", (evt) => {
+                btn_toggle_logging.textContent = "Stop";
+            });
+
+            window.addEventListener("logging-terminated", (evt) => {
+                btn_toggle_logging.textContent = "Start";
+            });
+        });
+    </script>
+
+    <script src="js/2dmap.js"></script>
+</body>
+</html>
