@@ -1,7 +1,12 @@
-var id = "";
+var app_id = "";
+var route_id = "";
 
 function setAppId(id) {
-    this.id = id;
+    app_id = id;
+}
+
+function setRouteId(id) {
+    route_id = id;
 }
 
 /**
@@ -123,7 +128,7 @@ function setAppId(id) {
                 this.logger_collection = {
                     ssid: this.ssid,
                     app_id: app_id,
-                    route_id: this.active_route_id,
+                    route_id: route_id === "" ? this.active_route_id : route_id,
                     start: timestamp,
                     end: timestamp,
                     ...(this.batched && { batch: this.current_batch }),
@@ -217,7 +222,7 @@ function setAppId(id) {
             this.logger_collection = {
                 ssid: this.ssid,
                 app_id: app_id,
-                route_id: this.active_route_id,
+                route_id: route_id === "" ? this.active_route_id : route_id,
                 start: timestamp,
                 end: timestamp,
                 batch: this.current_batch,

@@ -17,16 +17,10 @@
 <body>
     <div id="map" class="mazemap"></div>
 
-    <!-- Route selection buttons -->
-    <div class="route-selector-container">
-        <button id="btn-show-hide" class="ui-button">&gt</button>
-
-        <div id="route-buttons">
-            <button id="btn-route-a" class="ui-button">Route 1</button>
-            <button id="btn-route-b" class="ui-button">Route 2</button>
-            <button id="btn-route-c" class="ui-button">Route 3</button>
-        </div>
-    </div>
+    <a-scene vr-mode-ui="enabled: false">
+        <!-- Logger -->
+        <a-entity logger="interval: 1000; batched: true; batchSize: 60"></a-entity>
+    </a-scene>
 
     <!-- Logging button -->
     <div class="logging-selector-container">
@@ -34,34 +28,9 @@
     </div>
 
     <script>
-        setAppId("AR");
+        setAppId("2D");
+        setRouteId("route-a");
         window.addEventListener("load", (evt) => {
-
-            // Routing
-            const btn_show_hide = document.querySelector("#btn-show-hide");
-            const btn_route_buttons = document.querySelector("#route-buttons");
-
-            // Toggling the route menu
-            function toggle_route_menu(evt) {
-                console.debug("[ui]: toggling route menu");
-
-                if (btn_route_buttons.style.display !== "block") {
-                    btn_route_buttons.style.display = "block";
-                    btn_show_hide.textContent = "-";
-                } else {
-                    btn_route_buttons.style.display = "none";
-                    btn_show_hide.textContent = ">";
-                }
-            }
-
-            // Route menu button click handler
-            btn_show_hide.addEventListener("click", toggle_route_menu, false);
-
-            // Added "toggle-ability" to route buttons
-            btn_route_buttons.querySelectorAll("button[id^=btn-route-]").forEach(btn => {
-                btn.addEventListener("click", toggle_route_menu, false);
-            });
-
             // Logging
             const btn_toggle_logging = document.querySelector("#btn-toggle-logging");
 
