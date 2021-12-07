@@ -21,7 +21,6 @@
     is_logging: false,
     ssid: null,
     active_route_id: null,
-    app_id: null,
 
     orientation: {
         absolute: null,
@@ -234,3 +233,9 @@
         xhr.send(json);
     },
 });
+
+var id = "";
+
+function setAppId(id) {
+    this.id = id;
+}
