@@ -1,3 +1,9 @@
+var id = "";
+
+function setAppId(id) {
+    this.id = id;
+}
+
 /**
  * https://aframe.io/docs/1.2.0/core/systems.html
  */
@@ -116,7 +122,7 @@
 
                 this.logger_collection = {
                     ssid: this.ssid,
-                    app_id: this.app_id,
+                    app_id: app_id,
                     route_id: this.active_route_id,
                     start: timestamp,
                     end: timestamp,
@@ -210,7 +216,7 @@
             // Reset logger collection
             this.logger_collection = {
                 ssid: this.ssid,
-                app_id: this.app_id,
+                app_id: app_id,
                 route_id: this.active_route_id,
                 start: timestamp,
                 end: timestamp,
@@ -233,9 +239,3 @@
         xhr.send(json);
     },
 });
-
-var id = "";
-
-function setAppId(id) {
-    this.id = id;
-}
