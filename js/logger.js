@@ -226,7 +226,7 @@
         xhr.open("POST", uri, true);
         xhr.setRequestHeader("Content-Type", "application/json");
 
-        const json = JSON.stringify(logger_collection);
-        xhr.send(data);
+        const json = JSON.stringify(data);
+        xhr.send(json);
     },
 });
