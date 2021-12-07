@@ -107,7 +107,7 @@ function setRouteId(id) {
         this.button_click_listener = (evt) => {
 
             // Prevent logging without first selecting a route
-            if (this.active_route_id === null) {
+            if (route_id === "" && this.active_route_id === null) {
                 console.error("[logger]: preventing logging whilst route not selected");
                 window.alert("A route must be selected before logging")
                 return;
