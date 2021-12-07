@@ -126,6 +126,12 @@ AFRAME.registerComponent("route", {
                 longitude: points[i].longitude
             });
 
+            marker_entity.setAttribute('position', {
+                x: 0,
+                y: -10,
+                z: 0
+            });
+
             // Append to the route entity
             this.el.prepend(marker_entity);
         }
