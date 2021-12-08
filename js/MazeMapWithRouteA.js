@@ -56,7 +56,7 @@ map.on("load", () => {
   const watchID = navigator.geolocation.watchPosition(position => {
     console.log("updated");
 
-    var { latitude, longitude } = position.coords;
+    const { accuracy, altitude, altitudeAccuracy, latitude, longitude } = position.coords;
 
     locationController.updateLocationData({
       lngLat: {
@@ -64,6 +64,13 @@ map.on("load", () => {
         lat: latitude
       }
     });
+    
+    // Dummy event mimicking a-frame GPS camera event to trigger logger update
+    window.dispatchEvent(new CustomEvent("gps-camera-update-position", { 
+      detail: {
+        position: { accuracy, altitude, altitudeAccuracy, latitude, longitude } 
+      }
+    }));
 
     // comment out this section to prevent redraw of route
 //     if (trigger) {
