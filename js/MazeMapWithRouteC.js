@@ -13,7 +13,7 @@ var route_controller;
 map.addControl(new Mazemap.mapboxgl.NavigationControl(), 'bottom-right');
 
 //switches used for methods
-var trigger = true;
+// var trigger = true;
 var first = true;
 
 //InfoLab
@@ -61,11 +61,11 @@ map.on("load", () => {
       }
     });
 
-    if (trigger) {
-      set_route({ lngLat: { lng: longitude, lat: latitude } }, end);
-      trigger = false;
-      resetTrigger();
-    }
+//     if (trigger) {
+//       set_route({ lngLat: { lng: longitude, lat: latitude } }, end);
+//       trigger = false;
+//       resetTrigger();
+//     }
   });
 });
 
