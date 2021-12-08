@@ -15,7 +15,7 @@ map.addControl(new Mazemap.mapboxgl.NavigationControl(), 'bottom-right');
 //switches used for methods
 
 // comment out trigger to prevent redraw of route
-var trigger = true;
+// var trigger = true;
 
 var first = true;
 
@@ -66,11 +66,11 @@ map.on("load", () => {
     });
 
     // comment out this section to prevent redraw of route
-    if (trigger) {
-      set_route({ lngLat: { lng: longitude, lat: latitude } }, end);
-      trigger = false;
-      resetTrigger();
-    }
+//     if (trigger) {
+//       set_route({ lngLat: { lng: longitude, lat: latitude } }, end);
+//       trigger = false;
+//       resetTrigger();
+//     }
   });
 });
 
