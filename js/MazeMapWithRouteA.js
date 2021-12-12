@@ -1,162 +1,90 @@
 // The map
 const map = new Mazemap.Map({
-  container: "map",
-  campuses: 341,
-  center: { lng: -2.7922321418786713, lat: 54.01036998271985 },
-  zoom: 18,
-  zLevel: 1,
+    container: "map",
+    campuses: 341,
+    center: { lng: -2.7922321418786713, lat: 54.01036998271985 },
+    zoom: 18,
+    zLevel: 1,
 });
 
-var route_controller;
+// The static route file (The Round House to Chaplaincy Centre)
+const MAP_FILE = "../data/routing/path/rh-to-cc.json";
 
 // Add map navigation controls
-map.addControl(new Mazemap.mapboxgl.NavigationControl(), 'bottom-right');
+map.addControl(new Mazemap.mapboxgl.NavigationControl(), "bottom-right");
 
-//switches used for methods
-
-// comment out trigger to prevent redraw of route
-// var trigger = true;
-
-var first = true;
-
-
-//InfoLab
-var start = { lngLat: { lng: -2.7846447, lat: 54.0128025 } };
-//LICA
-var end = { lngLat: { lng: -2.7867986, lat: 54.0113047 } };
-
-//rest of functions wait for the map to load
+// Rest of functions wait for the map to load
 map.on("load", () => {
-  //Route Controller
-  route_controller = new Mazemap.RouteController(map, {
-    routeLineColorPrimary: "#0099EA",
-    routeLineColorSecondary: "#888888",
-  });
 
-  //BlueDot
-  const blueDot = new Mazemap.BlueDot({
-    map: map
-  })
-    .setAccuracy(10)
-    .show();
-
-  //Location Controller
-  const locationController = new Mazemap.LocationController({
-    blueDot: blueDot,
-    map: map
-  });
-
-  //Will set the initial route
-  set_route(start, end);
-
-  //Follow will always centre on the BlueDot as it moves
-  locationController.setState('follow');
-
-  //Listens for change in users location
-  const watchID = navigator.geolocation.watchPosition(position => {
-    console.log("updated");
-
-    const { accuracy, altitude, altitudeAccuracy, latitude, longitude } = position.coords;
-
-    locationController.updateLocationData({
-      lngLat: {
-        lng: longitude,
-        lat: latitude
-      }
+    // Route Controller
+    const route_controller = new Mazemap.RouteController(map, {
+        routeLineColorPrimary: "#0099EA",
+        routeLineColorSecondary: "#888888",
     });
-    
-    // Dummy event mimicking a-frame GPS camera event to trigger logger update
-    window.dispatchEvent(new CustomEvent("gps-camera-update-position", { 
-      detail: {
-        position: { accuracy, altitude, altitudeAccuracy, latitude, longitude } 
-      }
-    }));
 
-    // comment out this section to prevent redraw of route
-//     if (trigger) {
-//       set_route({ lngLat: { lng: longitude, lat: latitude } }, end);
-//       trigger = false;
-//       resetTrigger();
-//     }
-  });
-});
+    // BlueDot
+    const blueDot = new Mazemap.BlueDot({
+        map: map
+    })
+        .setAccuracy(10)
+        .show();
 
-function resetTrigger() {
-  setTimeout(() => {
-    trigger = true;
-  }, 5000);
-}
+    // Location Controller
+    const location_controller = new Mazemap.LocationController({
+        blueDot: blueDot,
+        map: map
+    });
 
-function set_route(p1, p2) {
-  // Remove previous route if present
-  route_controller.clear();
+    // Fetch the routing path and apply to map.
+    fetch(MAP_FILE)
+        .then(response => response.json())
+        .then(geojson => {
+            console.debug("[route-a]:", geojson);
 
-  // Get route and show if succesful
-  Mazemap.Data.getRouteJSON(p1, p2, {avoidStairs : true}).then((geojson) => {
-    //download("geojson", geojson);
+            // Set the route
+            const { path } = geojson;
+            route_controller.setPath(path);
 
-    // Set the route
-    route_controller.setPath(geojson);
+            // Fit map to bounds
+            const bounds = Mazemap.Util.Turf.bbox(path);
+            map.fitBounds(bounds, { padding: 100 });
+        })
+        .catch(err => console.error(err));
 
-    /*
-    remove to print the data about route
-    printRouteData(geojson);
-    */
+    // Follow will always centre on the BlueDot as it moves
+    location_controller.setState("follow");
 
-    //Fit the map bounds to the path bounds
-    //Only call when first setting route
-    if (first) {
-      first = false;
-      let bounds = Mazemap.Util.Turf.bbox(geojson);
-      map.fitBounds(bounds, { padding: 100 });
+    // Success position watcher callback
+    function watch_position_success(position) {
+        const { accuracy, altitude, altitudeAccuracy, latitude, longitude } = position.coords;
+
+        // Update map blue dot
+        location_controller.updateLocationData({
+            lngLat: {
+                lng: longitude,
+                lat: latitude
+            }
+        });
+
+        // Dummy event mimicking a-frame GPS camera event to trigger logger update
+        window.dispatchEvent(new CustomEvent("gps-camera-update-position", {
+            detail: {
+                position: { accuracy, altitude, altitudeAccuracy, latitude, longitude }
+            }
+        }));
     }
-  }).catch((e) => {
-    console.log(e);
-  });
-};
 
-/*
-DEBUG FUNCTIONS
-*/
-function download(filename, data) {
-  var jsonified = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
-  var a = document.createElement("a");
-  a.setAttribute("href", jsonified);
-  a.setAttribute("download", `${filename}.json`);
-  a.click();
-  a.remove();
-  console.log(`downloaded ${filename}`);
-}
+    // Error position watcher callback
+    function watch_position_error(err) {
+        console.warn("[navigator]:", err);
+    }
 
-//get route data
-function printRouteData(route) {
-  //get features array
-  const features = route.features;
-  features.forEach(feature => {
-    //get coordintes
-    var coords = feature.geometry.coordinates;
-    coords.forEach(coord => {
-      //check type is 'point' (point = stairs, etrance, etc.)
-      if (feature.geometry.type !== "Point") {
-        console.log("lng: " + coord[0] + " lat: " + coord[1]);
-        /*
-        uncomment to draw all the extracted points
-        drawPoint(coord);
-        */
-        /*
-        can add code here to do stuff with the extracted coordinates
-        */
-      }
-    });
-  });
-}
+    // Watcher options - should help with GPS inconsistencies
+    const options = {
+        enableHighAccuracy: true
+    };
 
-function drawPoint(coord) {
-  var marker = new Mazemap.MazeMarker({
-    zLevel: 0
-  })
-    .setLngLat(coord)
-    .addTo(map);
-}
-
-
+    // Listens for change in users location
+    const watcher_id = navigator.geolocation.watchPosition(watch_position_success, watch_position_error, options);
+    console.debug(`[navigator]: watcher id = ${watcher_id}`);
+});
