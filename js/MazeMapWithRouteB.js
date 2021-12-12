@@ -87,7 +87,7 @@ function set_route(p1, p2) {
   route_controller.clear();
 
   // Get route and show if succesful
-  Mazemap.Data.getRouteJSON(p1, p2).then((geojson) => {
+  Mazemap.Data.getRouteJSON(p1, p2, {avoidStairs : true}).then((geojson) => {
     //download("geojson", geojson);
 
     // Set the route
