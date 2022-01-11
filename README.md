@@ -2,7 +2,7 @@
 
 - index.html = AR only
 - ar-minimap.html = AR + Mazemap
-- 2D...?
+- 2dA.html, 2dB.html, 2dC.html = 2D Map Interfaces
 
 ## Route 1
 Round House to Chaplaincy
