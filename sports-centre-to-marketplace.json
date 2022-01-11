@@ -1,0 +1,2256 @@
+{
+    "path": {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7924128,
+                            54.0129891
+                        ],
+                        [
+                            -2.7923523,
+                            54.0128447
+                        ]
+                    ]
+                },
+                "id": 1768109,
+                "properties": {
+                    "m": 16.5557253065627,
+                    "z": 2.0,
+                    "buildingId": 3101,
+                    "target": 1768113,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 21.02577113933463,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923523,
+                            54.0128447
+                        ],
+                        [
+                            -2.7923434,
+                            54.0128285
+                        ]
+                    ]
+                },
+                "id": 1768113,
+                "properties": {
+                    "m": 1.89469340542595,
+                    "z": 2.0,
+                    "buildingId": 3101,
+                    "target": 1767275,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 2.406260624890957,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923434,
+                            54.0128285
+                        ],
+                        [
+                            -2.7923132,
+                            54.0127574
+                        ]
+                    ]
+                },
+                "id": 1767275,
+                "properties": {
+                    "m": 8.15686275628564,
+                    "z": 2.0,
+                    "buildingId": 3101,
+                    "target": 1767276,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 10.359215700482764,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923132,
+                            54.0127574
+                        ],
+                        [
+                            -2.7922937,
+                            54.0127115
+                        ]
+                    ]
+                },
+                "id": 1767276,
+                "properties": {
+                    "m": 5.26614930815186,
+                    "z": 2.0,
+                    "buildingId": 3101,
+                    "target": 1767197,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 6.688009621352863,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922937,
+                            54.0127115
+                        ],
+                        [
+                            -2.7923087,
+                            54.0127093
+                        ]
+                    ]
+                },
+                "id": 1767197,
+                "properties": {
+                    "m": 1.00742021989271,
+                    "z": 2.0,
+                    "buildingId": 3101,
+                    "target": 1767194,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 1.2794236792637417,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923087,
+                            54.0127093
+                        ],
+                        [
+                            -2.7923426,
+                            54.012704
+                        ]
+                    ]
+                },
+                "id": 1767194,
+                "properties": {
+                    "m": 2.29077650829421,
+                    "z": 2.0,
+                    "buildingId": 3101,
+                    "target": 1767774,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 2.9092861655336466,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923426,
+                            54.012704
+                        ],
+                        [
+                            -2.7923584,
+                            54.0127016
+                        ]
+                    ]
+                },
+                "id": 1767774,
+                "properties": {
+                    "m": 1.07445443154832,
+                    "z": 2.0,
+                    "buildingId": 3101,
+                    "target": 1767770,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 1.3645571280663664,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923584,
+                            54.0127016
+                        ],
+                        [
+                            -2.7923817,
+                            54.0127611
+                        ],
+                        [
+                            -2.7923556,
+                            54.0127646
+                        ],
+                        [
+                            -2.7923373,
+                            54.012721
+                        ],
+                        [
+                            -2.792364,
+                            54.012717
+                        ],
+                        [
+                            -2.7923808,
+                            54.0127575
+                        ]
+                    ]
+                },
+                "id": 1767770,
+                "properties": {
+                    "m": 19.984243200578103,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767761,
+                    "flags": [
+                        "NO_HC",
+                        "STAIR"
+                    ],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 50.75997772946838,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923808,
+                            54.0127575
+                        ],
+                        [
+                            -2.7923519,
+                            54.01276
+                        ]
+                    ]
+                },
+                "id": 1767761,
+                "properties": {
+                    "m": 1.9118312961405701,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767765,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 2.428025746098524,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923519,
+                            54.01276
+                        ],
+                        [
+                            -2.7923307,
+                            54.0127619
+                        ]
+                    ]
+                },
+                "id": 1767765,
+                "properties": {
+                    "m": 1.4049462693671901,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767437,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 1.7842817620963316,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7923307,
+                            54.0127619
+                        ],
+                        [
+                            -2.792314,
+                            54.0127643
+                        ]
+                    ]
+                },
+                "id": 1767437,
+                "properties": {
+                    "m": 1.1240449491700601,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767431,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 1.4275370854459764,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.792314,
+                            54.0127643
+                        ],
+                        [
+                            -2.792299,
+                            54.0127285
+                        ]
+                    ]
+                },
+                "id": 1767431,
+                "properties": {
+                    "m": 4.09445094054035,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767494,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 5.199952694486244,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.792299,
+                            54.0127285
+                        ],
+                        [
+                            -2.792292,
+                            54.0127118
+                        ]
+                    ]
+                },
+                "id": 1767494,
+                "properties": {
+                    "m": 1.91666649055786,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767496,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 2.434166443008482,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.792292,
+                            54.0127118
+                        ],
+                        [
+                            -2.7922829,
+                            54.01269
+                        ]
+                    ]
+                },
+                "id": 1767496,
+                "properties": {
+                    "m": 2.50010810312728,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767857,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.1751372909716458,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922829,
+                            54.01269
+                        ],
+                        [
+                            -2.7922725,
+                            54.0126653
+                        ]
+                    ]
+                },
+                "id": 1767857,
+                "properties": {
+                    "m": 2.83331509475039,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767516,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.5983101703329954,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922725,
+                            54.0126653
+                        ],
+                        [
+                            -2.7922671,
+                            54.0126522
+                        ]
+                    ]
+                },
+                "id": 1767516,
+                "properties": {
+                    "m": 1.49999242963682,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767077,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 1.9049903856387613,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922671,
+                            54.0126522
+                        ],
+                        [
+                            -2.7922631,
+                            54.0126428
+                        ]
+                    ]
+                },
+                "id": 1767077,
+                "properties": {
+                    "m": 1.08325709927406,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767075,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 1.3757365160780561,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922631,
+                            54.0126428
+                        ],
+                        [
+                            -2.7922579,
+                            54.0126304
+                        ]
+                    ]
+                },
+                "id": 1767075,
+                "properties": {
+                    "m": 1.41588461985123,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767444,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 1.798173467211062,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922579,
+                            54.0126304
+                        ],
+                        [
+                            -2.7922559,
+                            54.0126255
+                        ]
+                    ]
+                },
+                "id": 1767444,
+                "properties": {
+                    "m": 0.56334559440939,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767487,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 0.7154489048999253,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922559,
+                            54.0126255
+                        ],
+                        [
+                            -2.7922356,
+                            54.012577
+                        ]
+                    ]
+                },
+                "id": 1767487,
+                "properties": {
+                    "m": 5.562525271536311,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767904,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 7.064407094851115,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922356,
+                            54.012577
+                        ],
+                        [
+                            -2.7922242,
+                            54.0125497
+                        ]
+                    ]
+                },
+                "id": 1767904,
+                "properties": {
+                    "m": 3.1250354199115997,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767882,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.9687949832877316,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922242,
+                            54.0125497
+                        ],
+                        [
+                            -2.7922161,
+                            54.0125306
+                        ]
+                    ]
+                },
+                "id": 1767882,
+                "properties": {
+                    "m": 2.1979970392123103,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767353,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 2.791456239799634,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7922161,
+                            54.0125306
+                        ],
+                        [
+                            -2.7921942,
+                            54.0124781
+                        ]
+                    ]
+                },
+                "id": 1767353,
+                "properties": {
+                    "m": 6.0105633938898295,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767485,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 7.633415510240083,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7921942,
+                            54.0124781
+                        ],
+                        [
+                            -2.7921843,
+                            54.0124545
+                        ]
+                    ]
+                },
+                "id": 1767485,
+                "properties": {
+                    "m": 2.70883315112862,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767886,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.4402181019333478,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7921843,
+                            54.0124545
+                        ],
+                        [
+                            -2.7921749,
+                            54.0124321
+                        ]
+                    ]
+                },
+                "id": 1767886,
+                "properties": {
+                    "m": 2.5710650231887797,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767094,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.2652525794497502,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7921749,
+                            54.0124321
+                        ],
+                        [
+                            -2.7921596,
+                            54.012396
+                        ]
+                    ]
+                },
+                "id": 1767094,
+                "properties": {
+                    "m": 4.13953603214665,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767804,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 5.257210760826246,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7921596,
+                            54.012396
+                        ],
+                        [
+                            -2.7921066,
+                            54.0124036
+                        ]
+                    ]
+                },
+                "id": 1767804,
+                "properties": {
+                    "m": 3.57082716786503,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767952,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 4.534950503188588,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7921066,
+                            54.0124036
+                        ],
+                        [
+                            -2.7920959,
+                            54.0123779
+                        ]
+                    ]
+                },
+                "id": 1767952,
+                "properties": {
+                    "m": 2.94953177966007,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767955,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.745905360168289,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7920959,
+                            54.0123779
+                        ],
+                        [
+                            -2.7920816,
+                            54.0123459
+                        ]
+                    ]
+                },
+                "id": 1767955,
+                "properties": {
+                    "m": 3.68256950854019,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767922,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 4.676863275846041,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7920816,
+                            54.0123459
+                        ],
+                        [
+                            -2.7920773,
+                            54.0123357
+                        ]
+                    ]
+                },
+                "id": 1767922,
+                "properties": {
+                    "m": 1.16878218857173,
+                    "z": 1.0,
+                    "buildingId": 3101,
+                    "target": 1767925,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 1.484353379486097,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7920773,
+                            54.0123357
+                        ],
+                        [
+                            -2.7920575,
+                            54.0122869
+                        ]
+                    ]
+                },
+                "id": 1767925,
+                "properties": {
+                    "m": 5.586552732374759,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473147,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 7.094921970115944,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7920575,
+                            54.0122869
+                        ],
+                        [
+                            -2.7919483,
+                            54.0120275
+                        ]
+                    ]
+                },
+                "id": 3473147,
+                "properties": {
+                    "m": 29.7429586317455,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3419700,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 37.77355746231678,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7919483,
+                            54.0120275
+                        ],
+                        [
+                            -2.791788,
+                            54.0120497
+                        ]
+                    ]
+                },
+                "id": 3419700,
+                "properties": {
+                    "m": 10.7705474815131,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473961,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 13.678595301521637,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.791788,
+                            54.0120497
+                        ],
+                        [
+                            -2.7915667,
+                            54.0120804
+                        ]
+                    ]
+                },
+                "id": 3473961,
+                "properties": {
+                    "m": 14.8714948568025,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473962,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 18.886798468139176,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7915667,
+                            54.0120804
+                        ],
+                        [
+                            -2.7914807,
+                            54.0120197
+                        ]
+                    ]
+                },
+                "id": 3473962,
+                "properties": {
+                    "m": 8.79328227231623,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3419707,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 11.167468485841612,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7914807,
+                            54.0120197
+                        ],
+                        [
+                            -2.7913724,
+                            54.011963
+                        ]
+                    ]
+                },
+                "id": 3419707,
+                "properties": {
+                    "m": 9.49146967526287,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3419706,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 12.054166487583846,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7913724,
+                            54.011963
+                        ],
+                        [
+                            -2.7912786,
+                            54.0119991
+                        ],
+                        [
+                            -2.7911659,
+                            54.0119592
+                        ],
+                        [
+                            -2.7911212,
+                            54.0119527
+                        ],
+                        [
+                            -2.7910598,
+                            54.0119572
+                        ],
+                        [
+                            -2.7910112,
+                            54.0119683
+                        ],
+                        [
+                            -2.7908612,
+                            54.0119956
+                        ],
+                        [
+                            -2.7906779,
+                            54.0120117
+                        ],
+                        [
+                            -2.7905704,
+                            54.0120145
+                        ],
+                        [
+                            -2.7905138,
+                            54.0120149
+                        ],
+                        [
+                            -2.7904156,
+                            54.012015
+                        ],
+                        [
+                            -2.790385,
+                            54.0120165
+                        ],
+                        [
+                            -2.7903651,
+                            54.0120174
+                        ]
+                    ]
+                },
+                "id": 3419706,
+                "properties": {
+                    "m": 69.2908270429471,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3419702,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 87.99935034454282,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7903651,
+                            54.0120174
+                        ],
+                        [
+                            -2.790323,
+                            54.0119602
+                        ]
+                    ]
+                },
+                "id": 3419702,
+                "properties": {
+                    "m": 6.9312803621286205,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3419703,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 8.802726059903348,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.790323,
+                            54.0119602
+                        ],
+                        [
+                            -2.7901221,
+                            54.0119414
+                        ]
+                    ]
+                },
+                "id": 3419703,
+                "properties": {
+                    "m": 13.3075440811438,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3419713,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 16.900580983052624,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7901221,
+                            54.0119414
+                        ],
+                        [
+                            -2.7898629,
+                            54.0118698
+                        ],
+                        [
+                            -2.7897206,
+                            54.0118046
+                        ],
+                        [
+                            -2.7897187,
+                            54.0118039
+                        ]
+                    ]
+                },
+                "id": 3419713,
+                "properties": {
+                    "m": 30.6858400738758,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3419727,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 38.97101689382227,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7897187,
+                            54.0118039
+                        ],
+                        [
+                            -2.7895782,
+                            54.0117267
+                        ],
+                        [
+                            -2.7893766,
+                            54.0115476
+                        ],
+                        [
+                            -2.7893755,
+                            54.0115459
+                        ]
+                    ]
+                },
+                "id": 3419727,
+                "properties": {
+                    "m": 36.6818291690092,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3419716,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 46.58592304464168,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7893755,
+                            54.0115459
+                        ],
+                        [
+                            -2.7873817,
+                            54.01171
+                        ]
+                    ]
+                },
+                "id": 3419716,
+                "properties": {
+                    "m": 131.69480723989898,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473952,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 167.2524051946717,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7873817,
+                            54.01171
+                        ],
+                        [
+                            -2.7873811,
+                            54.01171
+                        ],
+                        [
+                            -2.7872899,
+                            54.0117132
+                        ]
+                    ]
+                },
+                "id": 3473952,
+                "properties": {
+                    "m": 6.01631900371871,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473620,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 7.640725134722762,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7872899,
+                            54.0117132
+                        ],
+                        [
+                            -2.7872443,
+                            54.0117746
+                        ]
+                    ]
+                },
+                "id": 3473620,
+                "properties": {
+                    "m": 7.46265309591519,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473954,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 9.477569431812292,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7872443,
+                            54.0117746
+                        ],
+                        [
+                            -2.7866703,
+                            54.0117762
+                        ],
+                        [
+                            -2.7865817,
+                            54.011762
+                        ]
+                    ]
+                },
+                "id": 3473954,
+                "properties": {
+                    "m": 43.554679461013805,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473966,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 55.31444291548753,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7865817,
+                            54.011762
+                        ],
+                        [
+                            -2.7865295,
+                            54.0118022
+                        ],
+                        [
+                            -2.7864704,
+                            54.0118621
+                        ],
+                        [
+                            -2.786441,
+                            54.0119196
+                        ],
+                        [
+                            -2.7864436,
+                            54.0121111
+                        ]
+                    ]
+                },
+                "id": 3473966,
+                "properties": {
+                    "m": 41.3456473556666,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473965,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 52.50897214169658,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7864436,
+                            54.0121111
+                        ],
+                        [
+                            -2.7863726,
+                            54.0121096
+                        ]
+                    ]
+                },
+                "id": 3473965,
+                "properties": {
+                    "m": 4.6466494351368794,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473766,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 5.901244782623837,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7863726,
+                            54.0121096
+                        ],
+                        [
+                            -2.7863243,
+                            54.0121127
+                        ],
+                        [
+                            -2.7862864,
+                            54.0121141
+                        ]
+                    ]
+                },
+                "id": 3473766,
+                "properties": {
+                    "m": 5.66316667499128,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473728,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 7.192221677238926,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7862864,
+                            54.0121141
+                        ],
+                        [
+                            -2.7861655,
+                            54.0121187
+                        ]
+                    ]
+                },
+                "id": 3473728,
+                "properties": {
+                    "m": 7.92876932936162,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473740,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 10.069537048289257,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7861655,
+                            54.0121187
+                        ],
+                        [
+                            -2.7857249,
+                            54.0121577
+                        ]
+                    ]
+                },
+                "id": 3473740,
+                "properties": {
+                    "m": 29.1415370295263,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473741,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 37.0097520274984,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7857249,
+                            54.0121577
+                        ],
+                        [
+                            -2.7856379,
+                            54.0121654
+                        ]
+                    ]
+                },
+                "id": 3473741,
+                "properties": {
+                    "m": 5.755502059325121,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473739,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 7.309487615342904,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7856379,
+                            54.0121654
+                        ],
+                        [
+                            -2.7856055,
+                            54.0121598
+                        ]
+                    ]
+                },
+                "id": 3473739,
+                "properties": {
+                    "m": 2.2086383927937,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1647717,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 2.804970758847999,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7856055,
+                            54.0121598
+                        ],
+                        [
+                            -2.7855677,
+                            54.0121654
+                        ]
+                    ]
+                },
+                "id": 1647717,
+                "properties": {
+                    "m": 2.54537822536245,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1647715,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.2326303462103114,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7855677,
+                            54.0121654
+                        ],
+                        [
+                            -2.7855347,
+                            54.0121702
+                        ]
+                    ]
+                },
+                "id": 1647715,
+                "properties": {
+                    "m": 2.22918054629605,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1647708,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 2.8310592937959838,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7855347,
+                            54.0121702
+                        ],
+                        [
+                            -2.7854718,
+                            54.0121761
+                        ]
+                    ]
+                },
+                "id": 1647708,
+                "properties": {
+                    "m": 4.16487572475779,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1638468,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 5.289392170442394,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7854718,
+                            54.0121761
+                        ],
+                        [
+                            -2.7854311,
+                            54.0121799
+                        ]
+                    ]
+                },
+                "id": 1638468,
+                "properties": {
+                    "m": 2.6945397954348302,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1638453,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.4220655402022344,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7854311,
+                            54.0121799
+                        ],
+                        [
+                            -2.7853858,
+                            54.0121871
+                        ]
+                    ]
+                },
+                "id": 1638453,
+                "properties": {
+                    "m": 3.06848071834135,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1638450,
+                    "flags": [
+                        "NO_HC",
+                        "STAIR"
+                    ],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 7.7939410245870295,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7853858,
+                            54.0121871
+                        ],
+                        [
+                            -2.7853551,
+                            54.0121917
+                        ]
+                    ]
+                },
+                "id": 1638450,
+                "properties": {
+                    "m": 2.0778093063681102,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1638456,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 2.6388178190875,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7853551,
+                            54.0121917
+                        ],
+                        [
+                            -2.785318,
+                            54.0121723
+                        ]
+                    ]
+                },
+                "id": 1638456,
+                "properties": {
+                    "m": 3.2564291295161,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1647739,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 4.135664994485447,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.785318,
+                            54.0121723
+                        ],
+                        [
+                            -2.7853088,
+                            54.0121506
+                        ]
+                    ]
+                },
+                "id": 1647739,
+                "properties": {
+                    "m": 2.4816506083975898,
+                    "z": 1.0,
+                    "buildingId": 2661,
+                    "target": 1647741,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 3.151696272664939,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7853088,
+                            54.0121506
+                        ],
+                        [
+                            -2.7852769,
+                            54.0121049
+                        ]
+                    ]
+                },
+                "id": 1647741,
+                "properties": {
+                    "m": 5.50594608251268,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473758,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 6.992551524791104,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7852769,
+                            54.0121049
+                        ],
+                        [
+                            -2.7850811,
+                            54.012119
+                        ]
+                    ]
+                },
+                "id": 3473758,
+                "properties": {
+                    "m": 12.9023479732676,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473761,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 16.38598192604985,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7850811,
+                            54.012119
+                        ],
+                        [
+                            -2.7848928,
+                            54.012148
+                        ]
+                    ]
+                },
+                "id": 3473761,
+                "properties": {
+                    "m": 12.735740168314399,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473764,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 16.174390013759286,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7848928,
+                            54.012148
+                        ],
+                        [
+                            -2.7848142,
+                            54.01216
+                        ]
+                    ]
+                },
+                "id": 3473764,
+                "properties": {
+                    "m": 5.3071715619262,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473841,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 6.7401078836462744,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7848142,
+                            54.01216
+                        ],
+                        [
+                            -2.7848062,
+                            54.0121459
+                        ],
+                        [
+                            -2.7845983,
+                            54.0121781
+                        ],
+                        [
+                            -2.784542,
+                            54.0121845
+                        ]
+                    ]
+                },
+                "id": 3473841,
+                "properties": {
+                    "m": 19.4734351128625,
+                    "z": 0.0,
+                    "buildingId": null,
+                    "target": 3473842,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 24.731262593335376,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.784542,
+                            54.0121845
+                        ],
+                        [
+                            -2.7844706,
+                            54.0121659
+                        ]
+                    ]
+                },
+                "id": 3473842,
+                "properties": {
+                    "m": 5.10731744013438,
+                    "z": 1.0,
+                    "buildingId": 2662,
+                    "target": 1649029,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 6.486293148970662,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7844706,
+                            54.0121659
+                        ],
+                        [
+                            -2.7844138,
+                            54.0121739
+                        ]
+                    ]
+                },
+                "id": 1649029,
+                "properties": {
+                    "m": 3.82296200416145,
+                    "z": 1.0,
+                    "buildingId": 2662,
+                    "target": 1649020,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 4.8551617452850415,
+                    "startTime": null,
+                    "endTime": null
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            -2.7844138,
+                            54.0121739
+                        ],
+                        [
+                            -2.7844337,
+                            54.0122228
+                        ]
+                    ]
+                },
+                "id": 1649020,
+                "properties": {
+                    "m": 11.0254119310358,
+                    "z": 1.0,
+                    "buildingId": 2662,
+                    "target": 1649017,
+                    "flags": [],
+                    "travelMode": "PEDESTRIAN",
+                    "travelType": "FOOT",
+                    "transitInfo": null,
+                    "source": "mazemap",
+                    "timeEstimateSeconds": 14.002273152415466,
+                    "startTime": null,
+                    "endTime": null
+                }
+            }
+        ]
+    },
+    "pathObjects": [
+        {
+            "nodeId": 1768109,
+            "z": 2.0,
+            "title": null,
+            "campusId": 341,
+            "buildingId": 3101,
+            "floorId": 10887
+        },
+        {
+            "nodeId": 1649017,
+            "z": 1.0,
+            "title": null,
+            "campusId": 341,
+            "buildingId": 2662,
+            "floorId": 9066
+        }
+    ],
+    "pathMetrics": {
+        "durationWalkingMinutes": 16,
+        "durationDrivingMinutes": 0,
+        "durationCyclingMinutes": 0,
+        "distanceWalkingMeters": 734,
+        "distanceCyclingMeters": 0,
+        "distanceDrivingMeters": 0
+    },
+    "dataProviders": []
+}
