@@ -1,4 +1,4 @@
-# tempy2000.github.io
+# SCC_402
 
 - index.html = AR only
 - ar-minimap.html = AR + Mazemap
