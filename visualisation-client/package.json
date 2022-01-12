@@ -1,0 +1,27 @@
+{
+    "name": "visualisation-client",
+    "version": "1.0.0",
+    "description": "A simple interface to interact with the rest-server and automatically generate the data visualisation plots for the study paper",
+    "source": "src/index.html",
+    "scripts": {
+        "start": "parcel --no-cache",
+        "start-once": "parcel --no-hmr --no-cache",
+        "build": "parcel build --no-cache",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Ryan Warren",
+    "license": "ISC",
+    "dependencies": {
+        "mapbox-gl": "^2.6.0"
+    },
+    "devDependencies": {
+        "@turf/turf": "^6.5.0",
+        "@types/mapbox-gl": "^2.6.0",
+        "parcel": "^2.0.1"
+    },
+    "@parcel/transformer-js": {
+        "inlineFS": true,
+        "inlineEnvironment": true
+    }
+}
